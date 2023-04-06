@@ -11,6 +11,12 @@
         "gutter_enabled": true
       }
     },
+    "cart-recommendations": {
+      "type": "main-cart-recommendations",
+      "settings": {
+        "heading": "You may also like"
+      }
+    },
     "cart-footer": {
       "type": "main-cart-footer",
       "blocks": {
@@ -24,12 +30,6 @@
         "subtotal"
       ],
       "settings": {
-      }
-    },
-    "cart-recommendations": {
-      "type": "main-cart-recommendations",
-      "settings": {
-        "heading": "You may also like"
       }
     }
   },

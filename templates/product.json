@@ -13,11 +13,10 @@
           "settings": {
           }
         },
-        "cbaba63b-24d9-4e8f-8ea6-09384a025bc0": {
-          "type": "text",
+        "a7277df1-c302-4c76-ab31-7d7dd23f0ba7": {
+          "type": "description",
           "settings": {
-            "text": "<p>Brighten your day with the cutest flower wrap around. we've got the sweetest blooms to deliver some sunshine right to your door.<\/p><p>Flowers vary based on season and availability, but our florists will select the freshest, most beautiful seasonal blooms for your wrap.<\/p><p>If you have any specific requests regarding colour, material, style or personal story, just let us know in the instructions section during checkout. We're here to create a customised experience for you!<\/p><p>Check out our flower subscriptions for regular joy of flowers, available for Sydney metro area delivery or in-store pickup.<\/p>",
-            "text_style": "subtitle"
+            "product_description_truncated": "truncated--disabled"
           }
         },
         "variant_picker": {
@@ -45,16 +44,26 @@
           "type": "pickup_avaiability",
           "settings": {
           }
+        },
+        "d917a283-18e0-4e5e-98d4-cb05d6ab8575": {
+          "type": "size_guide_popup",
+          "settings": {
+            "label": "View size chart",
+            "has_icon": true,
+            "page": "",
+            "open_mode": "popup"
+          }
         }
       },
       "block_order": [
         "title",
         "price",
-        "cbaba63b-24d9-4e8f-8ea6-09384a025bc0",
+        "a7277df1-c302-4c76-ab31-7d7dd23f0ba7",
         "variant_picker",
         "4e7372bc-9519-453f-97f7-60f93b8c5122",
         "buy_buttons",
-        "pickup_avaiability"
+        "pickup_avaiability",
+        "d917a283-18e0-4e5e-98d4-cb05d6ab8575"
       ],
       "settings": {
         "gallery_style": "slider",
@@ -78,7 +87,8 @@
           "type": "heading",
           "settings": {
             "heading": "<p>Enjoy your flowers!<\/p>",
-            "heading_size": "regular"
+            "heading_size": "regular",
+            "seo_h_tag": "h3"
           }
         },
         "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-1": {

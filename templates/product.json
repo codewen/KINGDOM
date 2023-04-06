@@ -50,7 +50,7 @@
           "settings": {
             "label": "Size guide",
             "has_icon": true,
-            "page": "",
+            "page": "size-guide",
             "open_mode": "popup"
           }
         }

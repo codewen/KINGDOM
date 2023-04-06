@@ -48,7 +48,7 @@
         "d917a283-18e0-4e5e-98d4-cb05d6ab8575": {
           "type": "size_guide_popup",
           "settings": {
-            "label": "View size chart",
+            "label": "Size guide",
             "has_icon": true,
             "page": "",
             "open_mode": "popup"

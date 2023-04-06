@@ -1,0 +1,1188 @@
+
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+
+<div id="rich-text-{{ section.id }}" class="content-section {% unless section.settings.image == blank %} gutter--off {% else %} gutter--on centered-section-content {% endunless %} rich-text rich-text--{{ section.settings.image_position }} rich-text--text-{{ section.settings.text_alignment }} rich-text--media-{% unless section.settings.image == blank %}on{% else %}off{% endunless %} {% if section.settings.color_bg != 'rgba(0,0,0,0)' and section.settings.image == blank %} parent-has-inner-padding {% endif %}">
+
+  <script class="gutter-script">
+    {%- unless section.settings.image == blank -%}
+      document.getElementById('rich-text-{{ section.id }}').parentElement.classList.add('without-gutter');
+    {%- else -%}
+      document.getElementById('rich-text-{{ section.id }}').parentElement.classList.add('with-gutter');
+      {%- if section.settings.color_bg != 'rgba(0,0,0,0)' -%}
+        document.getElementById('rich-text-{{ section.id }}').parentElement.classList.add('has-inner-padding');
+      {%- endif -%}
+    {%- endunless -%}
+  </script>
+
+  <div class="rich-text__content" style="text-align: {{ section.settings.text_alignment }}">
+
+    {%- for block in section.blocks -%}
+
+      {%- case block.type -%}
+
+        {%- when 'heading' -%}
+          <{{ block.settings.seo_h_tag }} class="rich-text__title {% if block.settings.heading_size == 'regular' %} h1 {% elsif block.settings.heading_size == 'large' %} h0 {% else %} hh {% endif %}" {{ block.shopify_attributes }}>{{ block.settings.heading }}</{{ block.settings.seo_h_tag }}>
+
+        {%- when 'text' -%}
+          <div class="rich-text__body rte"  {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+        {%- when 'button' -%}
+          <div class="rich-text__button">
+            <a class="button button--outline" href="{{ block.settings.button_link | escape }}" title="{{ block.settings.button_label }}"  {{ block.shopify_attributes }}>{{ block.settings.button_label | escape }}</a>
+          </div>
+
+        {%- when 'icon' -%}
+            <span class="rich-text__icon" {{ block.shopify_attributes }}>{%- render 'icons-pack', icon: block.settings.icon -%}</span>
+
+      {%- endcase -%}
+
+    {%- endfor -%}
+
+  </div>
+
+  {%- unless section.settings.image == blank -%}
+    <div class="rich-text__media">
+      {%- capture sizes -%}
+        sizes="(max-width: 648px) calc(50vh * {{ section.settings.image.aspect_ratio }}), calc({{ section.settings.image_height }} * {{ section.settings.image.aspect_ratio }})"
+      {%- endcapture -%}
+      {%- render 'lazy-image', image: section.settings.image, type: 'background', sizes: sizes, image_alignment: true -%}
+    </div>
+    {% style %}
+      #rich-text-{{ section.id }} .rich-text__media {
+        height: {{ section.settings.image_height }};
+      }
+    {% endstyle %}
+  {%- endunless -%}
+
+</div>
+
+{%- if section.settings.color_bg != 'rgba(0,0,0,0)' -%}
+  {% style %}
+    #rich-text-{{ section.id }} .rich-text__content,
+    #rich-text-{{ section.id }}.rich-text--media-off {
+      background: {{ section.settings.color_bg }};
+    }
+    #rich-text-{{ section.id }}.rich-text--media-off {
+      padding-top: var(--vertical-padding-more);
+      padding-bottom: var(--vertical-padding-more);
+    }
+  {% endstyle %}
+{%- endif -%}
+
+{%- if section.settings.color_text != 'rgba(0,0,0,0)' -%}
+  {% style %}
+    #rich-text-{{ section.id }} {
+      color: {{ section.settings.color_text }};
+    }
+    #rich-text-{{ section.id }} a {
+      color: {{ section.settings.color_text }};
+    }
+    #rich-text-{{ section.id }} svg * {
+      stroke: {{ section.settings.color_text }};
+    } 
+    #rich-text-{{ section.id }} .button--outline {
+      border-color: {{ section.settings.color_text }};
+    }
+  {% endstyle %}
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "t:sections.rich-text.name",
+    "tag": "section",
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "t:sections.rich-text.blocks.heading.name",
+        "settings": [
+           {
+            "type": "richtext",
+            "id": "heading",
+            "label": "t:sections.rich-text.blocks.heading.settings.heading.label",
+            "default": "<p>Talk about your brand</p>"
+          }, 
+          {
+            "type": "select",
+            "id": "heading_size",
+            "label": "t:sections.rich-text.blocks.heading.settings.heading_size.label",
+            "options": [
+              {
+                "value": "regular",
+                "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__1.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__2.label"
+              },
+              {
+                "value": "huge",
+                "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__3.label"
+              }
+            ],
+            "default": "regular"
+          },
+          {
+            "type": "select",
+            "id": "seo_h_tag",
+            "label": "t:sections.refactor_words.seo.label",
+            "info": "t:sections.refactor_words.seo.info",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "span",
+                "label": "span"
+              }
+            ],
+            "default": "h3"
+          }
+        ]
+      },
+      { 
+        "type": "text",
+        "name": "t:sections.rich-text.blocks.text.name",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "t:sections.rich-text.blocks.text.settings.text.label",
+            "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "t:sections.rich-text.blocks.button.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "t:sections.rich-text.blocks.button.settings.button_label.label",
+            "default": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "t:sections.rich-text.blocks.button.settings.button_link.label"
+          }
+        ]
+      },
+      {
+        "type": "icon",
+        "name": "t:sections.rich-text.blocks.icon.name",
+        "settings": [
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "t:sections.text-columns-with-icons.blocks.icon.settings.icon.label",
+            "info": "t:sections.text-columns-with-icons.settings.icons.info",
+            "options": [
+              {
+                "value": "archive-box",
+                "label": "Archive box",
+                "group": "Commerce"
+              },
+              {
+                "value": "british-pound",
+                "label": "British pound",
+                "group": "Commerce"
+              },
+              {
+                "value": "british-pound-sign",
+                "label": "British pound sign",
+                "group": "Commerce"
+              },
+              {
+                "value": "checkout-cart",
+                "label": "Checkout cart",
+                "group": "Commerce"
+              },
+              {
+                "value": "coins",
+                "label": "Coins",
+                "group": "Commerce"
+              },
+              {
+                "value": "delivery",
+                "label": "Delivery",
+                "group": "Commerce"
+              },
+              {
+                "value": "delivery-time",
+                "label": "Delivery time",
+                "group": "Commerce"
+              },
+              {
+                "value": "us-dolar",
+                "label": "Dollar",
+                "group": "Commerce"
+              },
+              {
+                "value": "dolar-sign",
+                "label": "Dollar sign",
+                "group": "Commerce"
+              },
+              {
+                "value": "euro",
+                "label": "Euro",
+                "group": "Commerce"
+              },
+              {
+                "value": "euro-sign",
+                "label": "Euro sign",
+                "group": "Commerce"
+              },
+              {
+                "value": "giftbox",
+                "label": "Giftbox",
+                "group": "Commerce"
+              },
+              {
+                "value": "hand-truck",
+                "label": "Hand truck",
+                "group": "Commerce"
+              },
+              {
+                "value": "label",
+                "label": "label",
+                "group": "Commerce"
+              },
+              {
+                "value": "open-box",
+                "label": "Open box",
+                "group": "Commerce"
+              },
+              {
+                "value": "package-delivered",
+                "label": "Package delivered",
+                "group": "Commerce"
+              },
+              {
+                "value": "paper-bag",
+                "label": "Paper bag",
+                "group": "Commerce"
+              },
+              {
+                "value": "purchase-order",
+                "label": "Purchase order",
+                "group": "Commerce"
+              },
+              {
+                "value": "shipping-box",
+                "label": "Shipping box",
+                "group": "Commerce"
+              },
+              {
+                "value": "shipping-truck",
+                "label": "Shipping truck",
+                "group": "Commerce"
+              },
+              {
+                "value": "shopping-trolley",
+                "label": "Shopping trolley",
+                "group": "Commerce"
+              },
+              {
+                "value": "store",
+                "label": "Store",
+                "group": "Commerce"
+              },
+              {
+                "value": "wallet",
+                "label": "Wallet",
+                "group": "Commerce"
+              },
+              {
+                "value": "asian-cuisine",
+                "label": "Asian cuisine",
+                "group": "Food icons"
+              },
+              {
+                "value": "barbecue",
+                "label": "Barbecue",
+                "group": "Food icons"
+              },
+              {
+                "value": "beer-pint",
+                "label": "Beer pint",
+                "group": "Food icons"
+              },
+              {
+                "value": "birthday-cake",
+                "label": "Birthday cake",
+                "group": "Food icons"
+              },
+              {
+                "value": "bread",
+                "label": "Bread",
+                "group": "Food icons"
+              },
+              {
+                "value": "chef-hat",
+                "label": "Chef hat",
+                "group": "Food icons"
+              },
+              {
+                "value": "coffee",
+                "label": "Coffee",
+                "group": "Food icons"
+              },
+              {
+                "value": "coffee-beans",
+                "label": "Coffee beans",
+                "group": "Food icons"
+              },
+              {
+                "value": "cutlery",
+                "label": "Cutlery",
+                "group": "Food icons"
+              },
+              {
+                "value": "dome-plate-cover",
+                "label": "Dome plate cover",
+                "group": "Food icons"
+              },
+              {
+                "value": "donut",
+                "label": "Donut",
+                "group": "Food icons"
+              },
+              {
+                "value": "hot-coffee",
+                "label": "Hot coffee",
+                "group": "Food icons"
+              },
+              {
+                "value": "ice-cream",
+                "label": "Ice-cream",
+                "group": "Food icons"
+              },
+              {
+                "value": "kettle",
+                "label": "Kettle",
+                "group": "Food icons"
+              },
+              {
+                "value": "paper-cup",
+                "label": "Paper cup",
+                "group": "Food icons"
+              },
+              {
+                "value": "pizza-slice",
+                "label": "Pizza slice",
+                "group": "Food icons"
+              },
+              {
+                "value": "soda-glass",
+                "label": "Soda glass",
+                "group": "Food icons"
+              },
+              {
+                "value": "tea-cup",
+                "label": "Tea cup",
+                "group": "Food icons"
+              },
+              {
+                "value": "tropical-cocktail",
+                "label": "Tropical cocktail",
+                "group": "Food icons"
+              },
+              {
+                "value": "wine-glass",
+                "label": "Wine glass",
+                "group": "Food icons"
+              },
+              {
+                "value": "ambulance",
+                "label": "Ambulance",
+                "group": "Health icons"
+              },
+              {
+                "value": "band-aid",
+                "label": "Band-aid",
+                "group": "Health icons"
+              },
+              {
+                "value": "brain",
+                "label": "Brain",
+                "group": "Health icons"
+              },
+              {
+                "value": "caduceus",
+                "label": "Caduceus",
+                "group": "Health icons"
+              },
+              {
+                "value": "diabetes",
+                "label": "Diabetes",
+                "group": "Health icons"
+              },
+              {
+                "value": "emergency-helicopter",
+                "label": "Emergency helicopter",
+                "group": "Health icons"
+              },
+              {
+                "value": "first-aid-kit",
+                "label": "First aid kit",
+                "group": "Health icons"
+              },
+              {
+                "value": "healthcare",
+                "label": "Healthcare",
+                "group": "Health icons"
+              },
+              {
+                "value": "heartbeat",
+                "label": "Heartbeat",
+                "group": "Health icons"
+              },
+              {
+                "value": "herbal-medicine",
+                "label": "Herbal medicine",
+                "group": "Health icons"
+              },
+              {
+                "value": "hospital-sign",
+                "label": "Hospital sign",
+                "group": "Health icons"
+              },
+              {
+                "value": "medical-research",
+                "label": "Medical research",
+                "group": "Health icons"
+              },
+              {
+                "value": "microscope",
+                "label": "Microscope",
+                "group": "Health icons"
+              },
+              {
+                "value": "pill",
+                "label": "Pill",
+                "group": "Health icons"
+              },
+              {
+                "value": "pills",
+                "label": "Pills",
+                "group": "Health icons"
+              },
+              {
+                "value": "scalpel",
+                "label": "Scalpel",
+                "group": "Health icons" 
+              },
+              {
+                "value": "syringe",
+                "label": "Syringe",
+                "group": "Health icons"
+              },
+              {
+                "value": "test-tube",
+                "label": "Test tube",
+                "group": "Health icons"
+              },  
+              {
+                "value": "bleach",
+                "label": "Bleach",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "do-not-iron",
+                "label": "Do not iron",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "do-not-tumble-dry",
+                "label": "Do not tumble dry",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "do-not-wash",
+                "label": "Do not wash",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "dry-clean",
+                "label": "Dry clean",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "dry-flat",
+                "label": "Dry flat",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "hand-wash",
+                "label": "Hand wash",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "iron",
+                "label": "Iron",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "machine-wash-30-degree",
+                "label": "Machine wash 30 degree",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "machine-wash-40-degree",
+                "label": "Machine wash 40 degree",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "machine-wash-50-degree",
+                "label": "Machine wash 50 degree",
+                "group": "Laundry icons"
+              },
+              {
+                "value": "machine-wash-60-degree",
+                "label": "Machine wash 60 degree",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "machine-wash-70-degree",
+                "label": "Machine wash 70 degree",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "machine-wash-95-degree",
+                "label": "Machine wash 95 degree",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "machine-wash",
+                "label": "Machine wash",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "machine-wash-delicate",
+                "label": "Machine wash delicate",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "machine-wash-resistant",
+                "label": "Machine wash resistant",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "no-bleach-cloth",
+                "label": "No bleach cloth",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "no-dry-clean-cloth",
+                "label": "No dry clean cloth",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "tumble-dry",
+                "label": "Tumble dry",
+                "group": "Laundry icons"  
+              },
+              {
+                "value": "camera",
+                "label": "Camera",
+                "group": "Media icons"
+              },
+              {
+                "value": "camera-phone",
+                "label": "Camera phone",
+                "group": "Media icons"
+              },
+              {
+                "value": "image",
+                "label": "Image",
+                "group": "Media icons"
+              },
+              {
+                "value": "image-gallery",
+                "label": "Image gallery",
+                "group": "Media icons"
+              },
+              {
+                "value": "loudspeaker",
+                "label": "Loudspeaker",
+                "group": "Media icons"
+              },
+              {
+                "value": "low-volume",
+                "label": "Low volume",
+                "group": "Media icons"
+              },
+              {
+                "value": "medium-volume",
+                "label": "Medium volume",
+                "group": "Media icons"
+              },
+              {
+                "value": "music",
+                "label": "Music",
+                "group": "Media icons"
+              },
+              {
+                "value": "mute",
+                "label": "Mute",
+                "group": "Media icons"
+              },
+              {
+                "value": "play",
+                "label": "Play",
+                "group": "Media icons"
+              },
+              {
+                "value": "play-movie",
+                "label": "Play movie",
+                "group": "Media icons"
+              },
+              {
+                "value": "silent-mode",
+                "label": "Silet mode",
+                "group": "Media icons"              
+              },
+              {
+                "value": "smartphone-camera",
+                "label": "Smartphone camera",
+                "group": "Media icons"
+              },
+              {
+                "value": "video-camera",
+                "label": "Video camera",
+                "group": "Media icons"
+              },
+              {
+                "value": "vocal-microphone",
+                "label": "Vocal microphone",
+                "group": "Media icons"
+              },
+              {
+                "value": "volume",
+                "label": "Volume",
+                "group": "Media icons"
+              },
+              {
+                "value": "volume-down",
+                "label": "Volume down",
+                "group": "Media icons"
+              },
+              {
+                "value": "volume-up",
+                "label": "Volume up",
+                "group": "Media icons"
+              },
+              {
+                "value": "wireless-headphones",
+                "label": "Wireless headphones",
+                "group": "Media icons"
+              },
+              {
+                "value": "alarm-clock",
+                "label": "Alarm clock",
+                "group": "Miscellaneous icons"    
+              },
+              {
+                "value": "bookshelf",
+                "label": "Bookshelf",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "config",
+                "label": "Config",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "configuration",
+                "label": "Configuration",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "direction-road-sign",
+                "label": "Direction road sign",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "earth-globe",
+                "label": "Earth globe",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "game-controller",
+                "label": "Game controller",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "literature",
+                "label": "Literature",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "map-marker",
+                "label": "Map marker",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "map-marker-2",
+                "label": "Map marker 2",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "mouse",
+                "label": "Mouse",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "news",
+                "label": "News",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "paperwork",
+                "label": "Paperwork",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "pencil",
+                "label": "Pencil",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "pin",
+                "label": "Pin",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "puzzle",
+                "label": "Puzzle",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "real-estate",
+                "label": "Real estate",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "security-shield",
+                "label": "Security shield",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "shield-crossmark",
+                "label": "Shield crossmark",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "sliders",
+                "label": "Sliders",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "time",
+                "label": "Time",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "time-limit",
+                "label": "Time limit",
+                "group": "Miscellaneous icons"
+              },
+              {
+                "value": "call-contact",
+                "label": "Call contact",
+                "group": "Social icons"
+              },
+              {
+                "value": "championship",
+                "label": "Championship",
+                "group": "Social icons"
+              },
+              {
+                "value": "conference",
+                "label": "Conference",
+                "group": "Social icons"
+              },
+              {
+                "value": "crown",
+                "label": "Crown",
+                "group": "Social icons"
+              },
+              {
+                "value": "diploma",
+                "label": "Diploma",
+                "group": "Social icons"
+              },
+              {
+                "value": "dislike-hand",
+                "label": "Dislike hand",
+                "group": "Social icons"
+              },
+              {
+                "value": "flag",
+                "label": "Flag",
+                "group": "Social icons"
+              },
+              {
+                "value": "handshake",
+                "label": "Handshake",
+                "group": "Social icons"
+              },
+              {
+                "value": "heart",
+                "label": "Heart",
+                "group": "Social icons"
+              },
+              {
+                "value": "id-card",
+                "label": "Id card",
+                "group": "Social icons"
+              },
+              {
+                "value": "like",
+                "label": "Like",
+                "group": "Social icons"
+              },
+              {
+                "value": "like-2",
+                "label": "Like-2",
+                "group": "Social icons"
+              },
+              {
+                "value": "like-hand",
+                "label": "Like hand",
+                "group": "Social icons"
+              },
+              {
+                "value": "luxury",
+                "label": "Luxury",
+                "group": "Social icons" 
+              },
+              {
+                "value": "men",
+                "label": "Men",
+                "group": "Social icons" 
+              },
+              {
+                "value": "social",
+                "label": "Social",
+                "group": "Social icons" 
+              },
+              {
+                "value": "star",
+                "label": "Star",
+                "group": "Social icons" 
+              },
+              {
+                "value": "star-medal",
+                "label": "Star medal",
+                "group": "Social icons" 
+              },
+              {
+                "value": "unlike",
+                "label": "Unlike",
+                "group": "Social icons" 
+              },
+              {
+                "value": "women",
+                "label": "Women",
+                "group": "Social icons" 
+              },
+              {
+                "value": "airplane-takeoff",
+                "label": "Airplane takeoff",
+                "group": "Transportation icons"
+              },
+              {
+                "value": "anchor",
+                "label": "Anchor",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "backpack",
+                "label": "Backpack",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "bike",
+                "label": "Bike",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "camp-fire",
+                "label": "Camp fire",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "escalator up",
+                "label": "Escalator up",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "gas-station",
+                "label": "Gas-station",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "gear-knob",
+                "label": "Gear knob",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "lifebelt",
+                "label": "Lifebelt",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "lighthouse",
+                "label": "Lighthouse",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "missile",
+                "label": "Missile",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "road",
+                "label": "Road",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "sailing",
+                "label": "Sailing",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "station-wagon",
+                "label": "Station wagon",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "trafic-light",
+                "label": "Trafic light",
+                "group": "Transportation icons" 
+              },
+              {
+                "value": "trailer",
+                "label": "Trailer",
+                "group": "Transportation icons"
+              },
+              {
+                "value": "celsius",
+                "label": "Celsius",
+                "group": "Weather icons"
+              },
+              {
+                "value": "cloud",
+                "label": "Cloud",
+                "group": "Weather icons"
+              },
+              {
+                "value": "cloud-lightning",
+                "label": "Cloud lightning",
+                "group": "Weather icons"
+              },
+              {
+                "value": "clouds",
+                "label": "Clouds",
+                "group": "Weather icons"
+              },
+              {
+                "value": "crescent-moon",
+                "label": "Crescent moon",
+                "group": "Weather icons"
+              },
+              {
+                "value": "fahrenheit",
+                "label": "Fahrenheit",
+                "group": "Weather icons"
+              },
+              {
+                "value": "heavy-rain",
+                "label": "Heavy rain",
+                "group": "Weather icons"
+              },
+              {
+                "value": "lightning-drizzle",
+                "label": "Lightning drizzle",
+                "group": "Weather icons"
+              },
+              {
+                "value": "night-cloudy",
+                "label": "Night cloudy",
+                "group": "Weather icons"
+              },
+              {
+                "value": "partly-cloudy",
+                "label": "Partly cloudy",
+                "group": "Weather icons"
+              },
+              {
+                "value": "rain",
+                "label": "Rain",
+                "group": "Weather icons"
+              },
+              {
+                "value": "snowflake",
+                "label": "Snowflake",
+                "group": "Weather icons"
+              },
+              {
+                "value": "snow-flurry",
+                "label": "Snow flurry",
+                "group": "Weather icons"
+              },
+              {
+                "value": "strong-wind",
+                "label": "Strong wind",
+                "group": "Weather icons"
+              },
+              {
+                "value": "sun",
+                "label": "Sun",
+                "group": "Weather icons"
+              },
+              {
+                "value": "umbrella",
+                "label": "Umbrella",
+                "group": "Weather icons"
+              },
+              {
+                "value": "water-droplet",
+                "label": "Water droplet",
+                "group": "Weather icons"
+              },
+              {
+                "value": "wind",
+                "label": "Wind",
+                "group": "Weather icons"
+              },
+              {
+                "value": "windsock",
+                "label": "Windsock",
+                "group": "Weather icons"
+              },
+              {
+                "value": "wind-turbine",
+                "label": "Wind turbine",
+                "group": "Weather icons"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "t:sections.rich-text.settings.text_alignment.label",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:sections.rich-text.settings.text_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:sections.rich-text.settings.text_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:sections.rich-text.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.rich-text.settings.image.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.rich-text.settings.image.label"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "t:sections.rich-text.settings.image_position.label",
+        "options": [
+          {
+            "value": "align-right",
+            "label": "t:sections.rich-text.settings.image_position.options__1.label"
+          },
+          {
+            "value": "align-left",
+            "label": "t:sections.rich-text.settings.image_position.options__2.label"
+          }
+        ],
+        "default": "align-left"
+      },
+      {
+        "type": "select",
+        "id": "image_height",
+        "label": "t:sections.rich-text.settings.image_height.label",
+        "options": [
+          {
+            "value": "50vh",
+            "label": "t:sections.rich-text.settings.image_height.options__1.label"
+          },
+          {
+            "value": "75vh",
+            "label": "t:sections.rich-text.settings.image_height.options__2.label"
+          },
+          {
+            "value": "100vh",
+            "label": "t:sections.rich-text.settings.image_height.options__3.label"
+          }
+        ],
+        "default": "75vh"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.colors.name"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "t:sections.custom-colors.text.label",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "t:sections.custom-colors.background.label",
+        "default": "rgba(0,0,0,0)"
+      }
+    ],
+    "presets": [{
+      "name": "t:sections.rich-text.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }]
+  }
+{% endschema %}

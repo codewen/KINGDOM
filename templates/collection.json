@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_text": "rgba(0,0,0,0)",
+        "color_bg": "rgba(0,0,0,0)"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_number": 24,
+        "enable_filtering": false,
+        "enable_sorting": false
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

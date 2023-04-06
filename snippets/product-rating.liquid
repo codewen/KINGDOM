@@ -1,0 +1,20 @@
+{%- if product.metafields.reviews.rating.value != blank -%} 
+  <span class="product__reviews body-text-sm product-review-badge">
+    {%- unless style == "small" -%} <a href="#shopify-product-reviews"> {%- endunless -%}
+      <span class="visually-hidden">{{ 'general.accessibility_labels.rating_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}</span>
+      <div aria-hidden="true">
+        <span class="rating-text">
+          {{ product.metafields.reviews.rating.value.rating | round: 1 }}
+        </span>
+        <span class="rating-icon">
+          {%- render 'theme-symbols', icon: 'star' -%}
+        </span>
+        {%- unless style == "small" -%}
+          <span class="rating-text">
+            {{ 'products.page.reviews_count' | t: count: product.metafields.reviews.rating_count }}
+          </span>
+        {%- endunless -%}
+      </div>
+    {%- unless style == "small" -%} </a> {%- endunless -%}
+  </span>
+{%- endif -%}

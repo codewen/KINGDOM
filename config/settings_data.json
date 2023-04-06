@@ -1,0 +1,231 @@
+{
+  "presets": {
+    "King": {
+      "sidebar_bg": "#ffffff",
+      "sidebar_txt": "#000000",
+      "sidebar_accent": "#ff0000",
+      "body_bg": "#ffffff",
+      "body_txt": "#000000",
+      "body_accent": "#ff0000",
+      "footer_bg": "#0d0d0d",
+      "footer_txt": "#ffffff",
+      "footer_accent": "#909090",
+      "headings_font": "montserrat_n6",
+      "headings_size": 22,
+      "body_font": "montserrat_n5",
+      "body_size": 14,
+      "body_size_alt": 18,
+      "grid_aspect": "natural",
+      "grid_show_secondary_image": true,
+      "grid_enhance_featured_product": true,
+      "grid_discount": "percentage",
+      "grid_style": "classic",
+      "grid_color_bg": "#000000",
+      "grid_color_text": "#ffffff",
+      "show_reviews_badge": false,
+      "favicon": "",
+      "cart_action": "overlay",
+      "cart_notes_enable": true,
+      "cart_additional_buttons": false,
+      "show_preloader": true,
+      "show_breadcrumb": true
+    },
+    "Queen": {
+      "sidebar_bg": "#000000",
+      "sidebar_txt": "#b1b1b1",
+      "sidebar_accent": "#ffffff",
+      "body_bg": "#eaeaea",
+      "body_accent": "#0000ff",
+      "footer_bg": "#0000ff",
+      "footer_accent": "#c4c7f8",
+      "grid_show_secondary_image": true,
+      "grid_enhance_featured_product": true,
+      "grid_discount": "percentage",
+      "grid_color_bg": "rgba(0,0,0,0)",
+      "grid_color_text": "#000000",
+      "show_reviews_badge": true,
+      "cart_action": "overlay",
+      "cart_notes_enable": true
+    },
+    "Prince": {
+      "sidebar_bg": "#d92f34",
+      "sidebar_txt": "#ffffff",
+      "sidebar_accent": "#ffffff",
+      "body_accent": "#d92f34",
+      "footer_accent": "#ff454b",
+      "body_font": "montserrat_n4",
+      "grid_show_secondary_image": true,
+      "grid_enhance_featured_product": true,
+      "grid_discount": "percentage",
+      "grid_style": "classic",
+      "cart_action": "overlay",
+      "cart_notes_enable": true
+    }
+  },
+  "current": {
+    "sidebar_bg": "#ffffff",
+    "sidebar_txt": "#000000",
+    "sidebar_accent": "#c75f2f",
+    "body_bg": "#ffffff",
+    "body_txt": "#000000",
+    "body_accent": "#c75f2f",
+    "footer_bg": "#ae6359",
+    "footer_txt": "#ffffff",
+    "footer_accent": "#f2f2f2",
+    "headings_font": "arvo_n4",
+    "headings_size": 21,
+    "body_font": "montserrat_n5",
+    "body_size": 13,
+    "body_size_alt": 17,
+    "grid_aspect": "natural",
+    "grid_enhance_featured_product": true,
+    "grid_show_secondary_image": true,
+    "grid_style": "classic",
+    "grid_color_bg": "#000000",
+    "grid_color_text": "#ffffff",
+    "grid_discount": "percentage",
+    "show_reviews_badge": false,
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "cart_action": "overlay",
+    "cart_notes_enable": true,
+    "cart_additional_buttons": true,
+    "show_breadcrumb": true,
+    "show_preloader": true,
+    "social_facebook": "https:\/\/www.facebook.com\/pastoraleflower",
+    "social_instagram": "https:\/\/instagram.com\/pastoraleflower",
+    "social_email": "info@pastoraleflower.com.au",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#ae6359",
+    "checkout_button_color": "#c75f2f",
+    "checkout_error_color": "#b70100",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "bar_show": true,
+          "bar_show_on_homepage": false,
+          "bar_show_dismiss": false,
+          "bar_message": "Order by 12pm for same day delivery!",
+          "bar_link": "shopify:\/\/collections\/daily-flowers",
+          "bar_bgcolor": "#ae6359",
+          "bar_txtcolor": "#ffffff"
+        }
+      },
+      "sidebar": {
+        "type": "sidebar",
+        "settings": {
+          "logo_src": "shopify:\/\/shop_images\/logo_black.png",
+          "logo_width": 174,
+          "menu_primary": "main-menu",
+          "menu_secondary": "sidebar-menu-1",
+          "show_locale_selector": false,
+          "show_country_selector": false,
+          "show_search": false
+        }
+      },
+      "text-columns-with-icons": {
+        "type": "text-columns-with-icons",
+        "blocks": {
+          "dc0e2351-9175-4503-9568-f4f102cbc798": {
+            "type": "text-icon",
+            "settings": {
+              "title": "Pickup",
+              "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Monday-Sunday 9am-5pm<\/p>"
+            }
+          },
+          "00665f2b-5814-4213-853b-3b6c73955a4a": {
+            "type": "text-icon",
+            "settings": {
+              "title": "Delivery",
+              "body": "<p>We deliver from 9am-6pm throughout the day.<\/p><p>Pricing is based on distance from our shop.<\/p><p>Check our <a href=\"\/policies\/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">shipping policy<\/a>.<\/p>"
+            }
+          },
+          "913a05c0-114a-4fb7-ba39-047df22f46cf": {
+            "type": "text-icon",
+            "settings": {
+              "title": "Returns",
+              "body": "<p>If you are unhappy with the quality of your arrangement please email us for replacement within 24 hours.<\/p><p>See our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">refund policy<\/a>.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "dc0e2351-9175-4503-9568-f4f102cbc798",
+          "00665f2b-5814-4213-853b-3b6c73955a4a",
+          "913a05c0-114a-4fb7-ba39-047df22f46cf"
+        ],
+        "settings": {
+          "text_alignment": "left",
+          "color_text": "#262626",
+          "color_bg": "#f2f2f2"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "ef9a5693-5753-47e0-8db0-35773b6db08f": {
+            "type": "text",
+            "settings": {
+              "title": "6 Central Park Ave, Chippendale, NSW australia",
+              "content": "<p>Monday - Sunday 9am - 5pm<\/p>",
+              "size": ""
+            }
+          },
+          "ba419de3-13f8-4d5e-be47-b93dfa9392fb": {
+            "type": "social",
+            "settings": {
+              "title": ""
+            }
+          },
+          "c8e8f4a6-0e1b-473b-81ca-597ab380f83a": {
+            "type": "text",
+            "settings": {
+              "title": "",
+              "content": "<p><a href=\"\/pages\/faq\" title=\"FAQ\">FAQ<\/a><\/p><p><a href=\"https:\/\/www.pastoraleflower.com.au\/pages\/how-to-take-care-your-flowers\" title=\"https:\/\/www.pastoraleflower.com.au\/pages\/how-to-take-care-your-flowers\">Flower Care<\/a><\/p><p><a href=\"\/pages\/hi-flower-lover\" title=\"Hi Flower Lover!\">Flower Subscription<\/a><\/p><p><a href=\"\/policies\/terms-of-service\" target=\"_blank\" title=\"Terms of Service\">Terms of Service<\/a><\/p><p><\/p>",
+              "size": ""
+            }
+          },
+          "7be060a4-88b0-4c0b-baff-0782671bcf23": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Join our blooms"
+            }
+          }
+        },
+        "block_order": [
+          "ef9a5693-5753-47e0-8db0-35773b6db08f",
+          "ba419de3-13f8-4d5e-be47-b93dfa9392fb",
+          "c8e8f4a6-0e1b-473b-81ca-597ab380f83a",
+          "7be060a4-88b0-4c0b-baff-0782671bcf23"
+        ],
+        "settings": {
+          "show_payment_icons": true,
+          "show_locale_selector": false,
+          "show_country_selector": false
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "title": "Sign up for our mailing list",
+          "content": "<p>Want updates, info on new product launches, and really pretty flowers? Join us!<\/p>",
+          "newsletter_enable": true,
+          "popup_enable": false,
+          "newsletter_auto": 10,
+          "newsletter_frequent": "week",
+          "image": "shopify:\/\/shop_images\/IMG_4021.jpg"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "10051081676463192982": {
+        "type": "shopify:\/\/apps\/rekaching-subscriptions\/blocks\/sub_account\/a6cb4897-b17f-41d9-9edd-72a875ee060f",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

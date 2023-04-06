@@ -1,0 +1,119 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "cbaba63b-24d9-4e8f-8ea6-09384a025bc0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Brighten your day with the cutest flower wrap around. we've got the sweetest blooms to deliver some sunshine right to your door.<\/p><p>Flowers vary based on season and availability, but our florists will select the freshest, most beautiful seasonal blooms for your wrap.<\/p><p>If you have any specific requests regarding colour, material, style or personal story, just let us know in the instructions section during checkout. We're here to create a customised experience for you!<\/p><p>Check out our flower subscriptions for regular joy of flowers, available for Sydney metro area delivery or in-store pickup.<\/p>",
+            "text_style": "subtitle"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "show_quantities": "no"
+          }
+        },
+        "4e7372bc-9519-453f-97f7-60f93b8c5122": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"\/pages\/hi-flower-lover\" target=\"_blank\" title=\"Hi Flower Lover!\">Subscription details<\/a><\/p>",
+            "text_style": "subtitle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_quantity_selector": true
+          }
+        },
+        "pickup_avaiability": {
+          "type": "pickup_avaiability",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "cbaba63b-24d9-4e8f-8ea6-09384a025bc0",
+        "variant_picker",
+        "4e7372bc-9519-453f-97f7-60f93b8c5122",
+        "buy_buttons",
+        "pickup_avaiability"
+      ],
+      "settings": {
+        "gallery_style": "slider",
+        "gallery_slider_style": true,
+        "gallery_pagination": "dots",
+        "gallery_gutter": false,
+        "enable_zoom": true,
+        "enable_video_looping": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like"
+      }
+    },
+    "4670b272-13dd-481f-8def-ba759ec6b154": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Enjoy your flowers!<\/p>",
+            "heading_size": "regular"
+          }
+        },
+        "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-0",
+        "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-1",
+        "template--15073436565577__4670b272-13dd-481f-8def-ba759ec6b154-166979564793523a4d-2"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "image_position": "align-left",
+        "image_height": "50vh",
+        "color_text": "rgba(0,0,0,0)",
+        "color_bg": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "4670b272-13dd-481f-8def-ba759ec6b154"
+  ]
+}

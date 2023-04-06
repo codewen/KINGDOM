@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "0abd3717-3d40-4a35-8e0d-b578788fe75c": {
+          "type": "collection",
+          "settings": {
+            "collection": "daily-flowers"
+          }
+        },
+        "77011195-348d-40eb-93db-be49cf58a4fb": {
+          "type": "collection",
+          "settings": {
+            "collection": "rose"
+          }
+        },
+        "1bb95efd-b03d-435a-842f-c6ebfc3b84a9": {
+          "type": "collection",
+          "settings": {
+            "collection": "designers-choice"
+          }
+        },
+        "bcc1ae63-54da-46af-b516-049349cb324a": {
+          "type": "collection",
+          "settings": {
+            "collection": "wedding-event"
+          }
+        },
+        "c3d7b43b-60f7-4b7a-840c-5560ee499c83": {
+          "type": "collection",
+          "settings": {
+            "collection": "gift-shop"
+          }
+        }
+      },
+      "block_order": [
+        "0abd3717-3d40-4a35-8e0d-b578788fe75c",
+        "77011195-348d-40eb-93db-be49cf58a4fb",
+        "1bb95efd-b03d-435a-842f-c6ebfc3b84a9",
+        "bcc1ae63-54da-46af-b516-049349cb324a",
+        "c3d7b43b-60f7-4b7a-840c-5560ee499c83"
+      ],
+      "settings": {
+        "layout": "layout-halves",
+        "alignment": "horizontal-left vertical-bottom",
+        "color_text": "#f5f5f5",
+        "color_bg": "rgba(0,0,0,0)",
+        "display_type": "selected",
+        "sort": "alphabetical"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

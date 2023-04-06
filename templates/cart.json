@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+      }
+    },
+    "1680663427dfb4e09b": {
+      "type": "apps",
+      "settings": {
+        "gutter_enabled": true
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "subtotal"
+      ],
+      "settings": {
+      }
+    },
+    "cart-recommendations": {
+      "type": "main-cart-recommendations",
+      "settings": {
+        "heading": "You may also like"
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "1680663427dfb4e09b",
+    "cart-recommendations",
+    "cart-footer"
+  ]
+}

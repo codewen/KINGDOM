@@ -7,7 +7,7 @@
 			<header class="page-title">
 				<div>
 					{%- render 'breadcrumb' -%}
-					<h1 class="title h0">{{ 'customers.account_page.title' | t }}</h1>
+					<h1 class="title h0">{{ 'customers.account_page.title' | t }}</h1>{% render 'subscription-account' %}
 			  	<span class="subtitle">{{ 'customers.account_page.subtitle' | t }}</span>
 		 		</div>
 		  	{% if shop.customer_accounts_enabled and customer %}

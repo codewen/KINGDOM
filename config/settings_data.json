@@ -88,7 +88,7 @@
     "favicon": "shopify:\/\/shop_images\/favicon.png",
     "cart_action": "overlay",
     "cart_notes_enable": false,
-    "cart_additional_buttons": false,
+    "cart_additional_buttons": true,
     "show_breadcrumb": true,
     "show_preloader": true,
     "social_facebook": "https:\/\/www.facebook.com\/pastoraleflower",

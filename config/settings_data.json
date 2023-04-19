@@ -87,7 +87,7 @@
     "show_reviews_badge": false,
     "favicon": "shopify:\/\/shop_images\/favicon.png",
     "cart_action": "overlay",
-    "cart_notes_enable": true,
+    "cart_notes_enable": false,
     "cart_additional_buttons": true,
     "show_breadcrumb": true,
     "show_preloader": true,

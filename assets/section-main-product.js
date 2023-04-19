@@ -135,6 +135,7 @@ if ( typeof ProductPage !== 'function' ) {
 
 				if ( this.querySelector('.product__form') ) {
 					this.querySelector('.product__form').addEventListener('add-to-cart', ()=>{
+						window.addDatePicker();
 						document.querySelector('.sidebar__cart').show();
 						if ( addToCartEnter ) {
 							setTimeout(()=>{

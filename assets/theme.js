@@ -94,3 +94,30 @@ if ( ! window.refreshCart ) {
 	}
 
 }
+
+if ( ! window.addDatePicker ) {
+	window.addDatePicker = () => {
+		$(document).ready( function() {
+			
+			$("#date").datepicker( {
+			minDate: +1,
+			maxDate: '+2M'
+			} );
+			
+	
+			$("[name='checkout']").click(function() {
+				if ($('#date').val() == "" || $('#date').val() === undefined)
+				{
+				  alert("You must pick a delivery date");
+				  return false;
+				} else {
+				  //$(this).submit();
+				  return true;
+				}
+			  });
+	
+		  });
+	}
+	window.addDatePicker();
+	console.log("init outside");
+}

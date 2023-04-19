@@ -12,6 +12,7 @@ if ( typeof QuickAddToCart !== 'function' ) {
 				this.closest('[data-js-product-item]').classList.add('null');
 			});
 			this.querySelector('product-form').addEventListener('add-to-cart', ()=>{
+				window.addDatePicker();
 				this.closest('[data-js-product-item]').classList.remove('null');
 				if ( ! document.body.classList.contains('template-cart') ) {
 					document.querySelector('.sidebar__cart').show();
@@ -102,6 +103,7 @@ if ( typeof QuickViewProduct !== 'function' ) {
 
 							if ( this.quickViewModal.querySelector('[data-js-product-form]') ) {
 								this.quickViewModal.querySelector('[data-js-product-form]').addEventListener('add-to-cart', ()=>{
+									window.addDatePicker();
 									this.quickViewModal.hide();
 								});
 							}

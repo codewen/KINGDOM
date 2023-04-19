@@ -1,35 +1,10 @@
 
-if ( ! window.addDatePicker ) {
-	window.addDatePicker = () => {
-		$(document).ready( function() {
-			
-			$("#date").datepicker( {
-			minDate: +1,
-			maxDate: '+2M'
-			} );
-			
-	
-			$("[name='checkout']").click(function() {
-				if ($('#date').val() == "" || $('#date').val() === undefined)
-				{
-				  alert("You must pick a delivery date");
-				  return false;
-				} else {
-				  //$(this).submit();
-				  return true;
-				}
-			  });
-	
-		  });
-	}
-}
 
 if ( typeof CartForm !== 'function' ) {
 	class CartForm extends HTMLElement {
 
 		constructor(){
 			window.addDatePicker();
-			console.log("constructor");
 			super();
 			this.ajaxifyCartItems();
 		}
@@ -122,7 +97,6 @@ if ( typeof CartForm !== 'function' ) {
 					this.dispatchEvent(event);
 
 					window.addDatePicker();
-					console.log("updateCartQty");
 
 				})
 				.catch(e => {
@@ -202,7 +176,6 @@ if ( ! window.refreshCart ) {
 			}
 
 			window.addDatePicker();
-			console.log("refreshCart");
 
 
 		})

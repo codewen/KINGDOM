@@ -115,12 +115,12 @@
 
 		<div>
 			<h3>Personalized Note</h3>
-			<textarea name="" id="" cols="30" rows="10" placeholder="Enter a note to be included with your order (150 character limit)"></textarea>
+			<textarea name="attributes[note]" value="{{ cart.attributes.note }}" id="" cols="30" rows="10" placeholder="Enter a note to be included with your order (150 character limit)"></textarea>
 		</div>
 		<br><br>
 		<div>
 			<h3>Special instructions for seller</h3>
-			<textarea name="" id="" cols="30" rows="10" placeholder="Enter notes to florist, allergies, delivery instructions, etc (150 character limit)"></textarea>
+			<textarea name="attributes[message]" value="{{ cart.attributes.message }}" id="" cols="30" rows="10" placeholder="Enter notes to florist, allergies, delivery instructions, etc (150 character limit)"></textarea>
 		</div>
 		<br><br>
 		<div>
@@ -133,7 +133,17 @@
 		</div>
 		<br><br>
 		<div>
-			<input type="text" name="" id="date">
+			<input id="date" type="text" name="attributes[date]" value="{{ cart.attributes.date }}" required/>
+		</div>
+		<div>
+			<label for="time">Prefered Delivery Time:</label>
+				<select name="attributes[time]">
+					<option value="10:00 - 12:00">10:00 - 12:00</option>
+					<option value="12:00 - 14:00">12:00 - 14:00</option>
+					<option value="14:00 - 16:00">14:00 - 16:00</option>
+					<option value="16:00 - 18:00">16:00 - 18:00</option>
+					<option value="18:00 - 20:00">18:00 - 20:00</option>
+				</select>
 		</div>
 	</form>
 

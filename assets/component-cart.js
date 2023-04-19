@@ -1,7 +1,35 @@
+
+if ( ! window.addDatePicker ) {
+	window.addDatePicker = () => {
+		$(document).ready( function() {
+			
+			$("#date").datepicker( {
+			minDate: +1,
+			maxDate: '+2M'
+			} );
+			
+	
+			$("[name='checkout']").click(function() {
+				if ($('#date').val() == "" || $('#date').val() === undefined)
+				{
+				  alert("You must pick a delivery date");
+				  return false;
+				} else {
+				  //$(this).submit();
+				  return true;
+				}
+			  });
+	
+		  });
+	}
+}
+
 if ( typeof CartForm !== 'function' ) {
 	class CartForm extends HTMLElement {
 
 		constructor(){
+			window.addDatePicker();
+			console.log("constructor");
 			super();
 			this.ajaxifyCartItems();
 		}
@@ -40,6 +68,7 @@ if ( typeof CartForm !== 'function' ) {
 
 		updateCartQty(item, newQty){
 
+			
 			this.form.classList.add('processing');
 			if ( this.querySelector('.alert') ) {
 				this.querySelector('.alert').remove();
@@ -91,6 +120,9 @@ if ( typeof CartForm !== 'function' ) {
 							
 					const event = new Event('cart-updated');
 					this.dispatchEvent(event);
+
+					window.addDatePicker();
+					console.log("updateCartQty");
 
 				})
 				.catch(e => {
@@ -144,7 +176,6 @@ if ( ! window.refreshCart ) {
 		fetch('?section_id=helper-cart')
 			.then(response => response.text())
 			.then(text => {
-
 			const sectionInnerHTML = new DOMParser().parseFromString(text, 'text/html');
 			const cartFormInnerHTML = sectionInnerHTML.getElementById('AjaxCartForm').innerHTML;
 			const cartSubtotalInnerHTML = sectionInnerHTML.getElementById('AjaxCartSubtotal').innerHTML;
@@ -169,6 +200,10 @@ if ( ! window.refreshCart ) {
 				document.querySelector('cart-recommendations').innerHTML = '';
 				document.querySelector('cart-recommendations').generateRecommendations();
 			}
+
+			window.addDatePicker();
+			console.log("refreshCart");
+
 
 		})
 

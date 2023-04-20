@@ -252,6 +252,15 @@ html[dir=ltr] .template-cart .cart-details > div {
 .cart__form .alert {
   margin: 30px 0 0;
 }
+.cart__form .tabs{
+  display: flex;
+}
+
+.cart__form .tabs .tab{
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
 
 .cart__items {
   margin-bottom: 30px;

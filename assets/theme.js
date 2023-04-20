@@ -99,6 +99,7 @@ if ( ! window.addDatePicker ) {
 	window.addDatePicker = () => {
 		$(document).ready( function() {
 			
+			//init date picker
 			$("#date").datepicker( {
 			minDate: +1,
 			maxDate: '+2M'

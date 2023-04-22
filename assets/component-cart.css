@@ -256,10 +256,18 @@ html[dir=ltr] .template-cart .cart-details > div {
   display: flex;
 }
 
-.cart__form .tabs .tab{
+.cart__form .tabs .tab {
   display: flex;
+  flex-direction: column;
+  padding: 10px;
   align-items: center;
+  justify-content: center;
   width: 50%;
+  border: 1px solid #dadada;
+}
+
+.cart__form .tabs .tab svg{
+  margin: 0 0 10px 0;
 }
 
 .cart__items {

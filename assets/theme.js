@@ -3,64 +3,64 @@ KROWN.themeVersion = '5.0.0';
 
 // Shopify events
 
-const executeOnceOnDomContentLoaded = ()=>{
+const executeOnceOnDomContentLoaded = () => {
 
 	// input helpers
 
-	document.querySelectorAll('input').forEach(elm=>{
-		elm.addEventListener('change',e=>{
-			if ( e.target.value != '' ) {
+	document.querySelectorAll('input').forEach(elm => {
+		elm.addEventListener('change', e => {
+			if (e.target.value != '') {
 				e.target.classList.add('filled');
 			} else {
 				e.target.classList.remove('filled');
 			}
 		})
 	});
-	document.querySelectorAll('input[type="search"]').forEach(elm=>{elm.value=''});
+	document.querySelectorAll('input[type="search"]').forEach(elm => { elm.value = '' });
 
 	// a11y tab helper 
 
 	let activeElement = document.activeElement;
-	document.addEventListener('keyup', e=>{
-		if ( e.keyCode == window.KEYCODES.TAB ) {
-      if ( activeElement.classList.contains('focus') && e.target != activeElement ) {
-      	activeElement.classList.remove('focus');
-      }
-      if ( e.target.classList.contains('regular-select-cover') ||
-      	e.target.classList.contains('search-field') ||
-      	e.target.classList.contains('product-item__link') ||
-      	e.target.classList.contains('content-slider') || 
-      	e.target.classList.contains('blog-item__header') ||
-      	e.target.classList.contains('toggle__title') ||
-      	e.target.tagName == 'INPUT'
-      ) {
-      	activeElement = e.target;
-        e.target.classList.add('focus');
-      } 
-    }
+	document.addEventListener('keyup', e => {
+		if (e.keyCode == window.KEYCODES.TAB) {
+			if (activeElement.classList.contains('focus') && e.target != activeElement) {
+				activeElement.classList.remove('focus');
+			}
+			if (e.target.classList.contains('regular-select-cover') ||
+				e.target.classList.contains('search-field') ||
+				e.target.classList.contains('product-item__link') ||
+				e.target.classList.contains('content-slider') ||
+				e.target.classList.contains('blog-item__header') ||
+				e.target.classList.contains('toggle__title') ||
+				e.target.tagName == 'INPUT'
+			) {
+				activeElement = e.target;
+				e.target.classList.add('focus');
+			}
+		}
 	});
 
-  // newsletter has jump
+	// newsletter has jump
 
-	if ( window.location.search == '?customer_posted=true' ) {
-		setTimeout(()=>{
+	if (window.location.search == '?customer_posted=true') {
+		setTimeout(() => {
 			window.scroll({
-			  top: document.querySelector('form .alert').offsetTop - 250, 
-			  behavior: 'smooth'
+				top: document.querySelector('form .alert').offsetTop - 250,
+				behavior: 'smooth'
 			});
 		}, 300);
-	} else if ( window.location.pathname.includes('/challenge') ) {
-		setTimeout(()=>{
+	} else if (window.location.pathname.includes('/challenge')) {
+		setTimeout(() => {
 			window.scroll({
-			  top: 0, 
-			  behavior: 'auto'
+				top: 0,
+				behavior: 'auto'
 			});
 		}, 300);
 	}
 
 }
 
-if ( document.readyState !== 'loading' ) {
+if (document.readyState !== 'loading') {
 	executeOnceOnDomContentLoaded();
 } else {
 	document.addEventListener('DOMContentLoaded', executeOnceOnDomContentLoaded);
@@ -68,10 +68,10 @@ if ( document.readyState !== 'loading' ) {
 
 // method for apps to tap into and refresh the cart
 
-if ( ! window.refreshCart ) {
+if (!window.refreshCart) {
 
 	window.refreshCart = () => {
-		
+
 		fetch('?section_id=cart-helper')
 			.then(response => response.text())
 			.then(text => {
@@ -84,41 +84,129 @@ if ( ! window.refreshCart ) {
 				cartItems.innerHTML = cartFormInnerHTML;
 				cartItems.ajaxifyCartItems();
 				document.querySelector('[data-header-cart-count]').textContent = cartItems.querySelector('[data-cart-count]').textContent;
-
 				document.getElementById('AjaxCartSubtotal').innerHTML = cartSubtotalInnerHTML;
-
 				document.querySelector('.sidebar__cart').show();
 
-		})
+			})
 
 	}
 
 }
 
-if ( ! window.addDatePicker ) {
-	window.addDatePicker = () => {
-		$(document).ready( function() {
-			
-			//init date picker
-			$("#date").datepicker( {
-			minDate: +1,
-			maxDate: '+2M'
-			} );
-			
-	
-			$("[name='checkout']").click(function() {
-				if ($('#date').val() == "" || $('#date').val() === undefined)
-				{
-				  alert("You must pick a delivery date");
-				  return false;
+
+if (!window.addDatePicker) {
+	const hourNow = new Date().getHours();
+	const todayString = new Date().toLocaleDateString();
+	const pickUpSelected = () => {
+		$("#js-pick-up-time").show();
+		$("#date").datepicker({
+			minDate: hourNow > 13 ? +1 : 0,
+			maxDate: '+2M',
+			dateFormat: "dd/mm/yy",
+			onSelect: (dateText) => {
+				if (dateText === todayString) {
+					if (hourNow < 7 || hourNow > 13) {
+						addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
+					} else {
+						addPickupOptionsForTimePicker(setPickUpTime(hourNow + 3, 17, 1));
+					}
 				} else {
-				  //$(this).submit();
-				  return true;
+					addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
 				}
-			  });
-	
-		  });
+			}
+		});
+
+	}
+	const DeliverySelected = () => {
+		$("#js-delivery-time").show();
+		$("#date").datepicker({
+			minDate: hourNow > 11 ? +1 : 0,
+			maxDate: '+2M',
+			dateFormat: "dd/mm/yy",
+			onSelect: (dateText) => {
+				if (dateText === todayString && hourNow < 12) {
+					addDeliveryOptionsForTimePicker(SetDeliveryTime(["PM"]));
+				} else {
+					addDeliveryOptionsForTimePicker(SetDeliveryTime(["AM", "PM"]));
+				}
+			}
+		});
+	}
+	const numberToTimeFormat = (number) => {
+		if (number < 10 && number >= 0)
+			return "0" + number + ":00";
+		else if (number > 9 && number < 25) {
+			return number + ":00";
+		}
+		return "00:00"
+	}
+	const addDeliveryOptionsForTimePicker = (options) => {
+		$(".js-delivery-time-select").empty();
+		$(".js-delivery-time-select").append(options)
+	}
+	const addPickupOptionsForTimePicker = (options) => {
+		$(".js-pick-up-time-select").empty();
+		$(".js-pick-up-time-select").append(options)
+	}
+	const setPickUpTime = (start, end, space) => {
+		let resultArray = [];
+		let current = start;
+		while (current + space <= end) {
+			const timeString = numberToTimeFormat(current) + " - " + numberToTimeFormat(current + space)
+			const optionElement = document.createElement("option")
+			optionElement.value = timeString;
+			optionElement.innerHTML = timeString;
+			resultArray.push(optionElement);
+			current = current + space;
+		}
+		return resultArray;
+	}
+	const SetDeliveryTime = (array) => {
+		return array.map((value) => {
+			const optionElement = document.createElement("option")
+			optionElement.value = value;
+			optionElement.innerHTML = value;
+			return optionElement
+		})
+
+	}
+
+
+	window.addDatePicker = () => {
+		$(document).ready(function () {
+
+			//add date check on submit
+			$("[name='checkout']").click(function () {
+				if ($('#date').val() == "" || $('#date').val() === undefined) {
+					alert("You must pick a delivery date");
+					return false;
+				} else {
+					//$(this).submit();
+					return true;
+				}
+			});
+
+			//init delivery toggle
+			$(".cart__form .tabs .tab").unbind("click");
+			$("#js-delivery-time, #js-pick-up-time").hide();
+			$(".date-picker-wrapper").hide();
+			$(".cart__form .tabs .tab").click((event) => {
+				$(".cart__form .tabs .tab").removeClass("selected");
+				$(event.currentTarget).addClass("selected");
+				$("#js-delivery-time, #js-pick-up-time").hide();
+				$("#date").val("")
+				$(".date-picker-wrapper").show();
+				$("#date").datepicker("destroy");
+				$(".js-delivery-time-select").empty();
+				$(".js-pick-up-time-select").empty();
+				if ($(event.currentTarget).hasClass("pickup")) {
+					pickUpSelected();
+				} else {
+					DeliverySelected();
+				}
+			});
+		});
+
 	}
 	window.addDatePicker();
-	console.log("init outside");
 }

@@ -118,7 +118,7 @@
         "settings": {
           "logo_src": "shopify:\/\/shop_images\/logo_black.png",
           "logo_width": 174,
-          "menu_primary": "sidebar-menu-1",
+          "menu_primary": "main-menu",
           "menu_secondary": "sidebar-menu-1",
           "show_locale_selector": false,
           "show_country_selector": false,

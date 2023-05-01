@@ -12,18 +12,31 @@ endif
   dir="{{ direction }}">
 
   <head>
-  <link rel="stylesheet" href="https://obscure-escarpment-2240.herokuapp.com/stylesheets/bcpo-front.css">
-  <script>var bcpo_product={{ product | json }}; {% if product.metafields.bcpo.bcpo_data %}var bcpo_data={{ product.metafields.bcpo.bcpo_data }};{% endif %} {% if shop.metafields.bcpo.bcpo_settings %}var bcpo_settings={{ shop.metafields.bcpo.bcpo_settings }};{% endif %}var inventory_quantity = [];{% for v in product.variants %}inventory_quantity.push({{v.inventory_quantity}});{% endfor %}if(bcpo_product) { for (var i = 0; i < bcpo_product.variants.length; i += 1) { bcpo_product.variants[i].inventory_quantity = inventory_quantity[i]; }}window.bcpo = window.bcpo || {}; bcpo.cart = {{cart | json}}; bcpo.ogFormData = FormData; bcpo.money_with_currency_format = {{ shop.money_with_currency_format  | json }};bcpo.money_format = {{ shop.money_format  | json }};</script> 
-        <script src='{{ 'subscription-plan-selector-js.js' | asset_url }}' defer='defer' ></script>
-        <script id='sealoop_product' type='application/json'>
-              {{ product | json }}
-        </script>
-        <script id='sealoop_product_selected_or_first_variant' type='application/json'>
-              {{ product.selected_or_first_available_variant.id | json }}
-        </script>
-        <script id='sealoop_money_format' type='application/json'>
-            {{shop.money_format | json}}
-        </script>
+    <link rel="stylesheet" href="https://obscure-escarpment-2240.herokuapp.com/stylesheets/bcpo-front.css">
+    <script>
+      var bcpo_product = {{ product | json }};{% if product.metafields.bcpo.bcpo_data %}
+        var bcpo_data = {{ product.metafields.bcpo.bcpo_data }};{% endif %}{% if shop.metafields.bcpo.bcpo_settings %}
+        var bcpo_settings = {{ shop.metafields.bcpo.bcpo_settings }};{% endif %}var inventory_quantity = [];{% for v in product.variants %}inventory_quantity.push({{v.inventory_quantity}});{% endfor %}if (bcpo_product) {
+        for (var i = 0; i < bcpo_product.variants.length; i += 1) {
+          bcpo_product.variants[i].inventory_quantity = inventory_quantity[i];
+        }
+      }
+      window.bcpo = window.bcpo || {};
+      bcpo.cart = {{cart | json}};
+      bcpo.ogFormData = FormData;
+      bcpo.money_with_currency_format = {{ shop.money_with_currency_format  | json }};
+      bcpo.money_format = {{ shop.money_format  | json }};
+    </script>
+    <script src='{{ 'subscription-plan-selector-js.js' | asset_url }}' defer='defer'></script>
+    <script id='sealoop_product' type='application/json'>
+      {{ product | json }}
+    </script>
+    <script id='sealoop_product_selected_or_first_variant' type='application/json'>
+      {{ product.selected_or_first_available_variant.id | json }}
+    </script>
+    <script id='sealoop_money_format' type='application/json'>
+      {{ shop.money_format | json }}
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -77,15 +90,15 @@ endif
     {{ 'theme.css' | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
-  <script id="vopo-head">(function () {
-	if (((document.documentElement.innerHTML.includes('asyncLoad') && !document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240')) || (window.bcpo && bcpo.disabled)) && !window.location.href.match(/[&?]yesbcpo/)) return;
-	var script = document.createElement('script');
-	var reg = new RegExp('\\\\/\\\\/cdn\\.shopify\\.com\\\\/proxy\\\\/[a-z0-9]+\\\\/obscure-escarpment-2240\\.herokuapp\\.com\\\\/js\\\\/best_custom_product_options\\.js[^"]+');
-	var match = reg.exec(document.documentElement.innerHTML);
-	script.src = match[0].split('\\').join('').replace('%3f', '?').replace('u0026', '&');
-	var vopoHead = document.getElementById('vopo-head'); vopoHead.parentNode.insertBefore(script, vopoHead);
-})();
-</script>
+    <script id="vopo-head">(function () {
+      if (((document.documentElement.innerHTML.includes('asyncLoad') && !document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240')) || (window.bcpo && bcpo.disabled)) && !window.location.href.match(/[&?]yesbcpo/)) return;
+                                                	var script = document.createElement('script');
+                                                	var reg = new RegExp('\\\\/\\\\/cdn\\.shopify\\.com\\\\/proxy\\\\/[a-z0-9]+\\\\/obscure-escarpment-2240\\.herokuapp\\.com\\\\/js\\\\/best_custom_product_options\\.js[^"]+');
+                                                	var match = reg.exec(document.documentElement.innerHTML);
+                                                	script.src = match[0].split('\\').join('').replace('%3f', '?').replace('u0026', '&');
+                                                	var vopoHead = document.getElementById('vopo-head'); vopoHead.parentNode.insertBefore(script, vopoHead);
+                                                })();
+    </script>
 
     {%- if template == 'customers/addresses' -%}
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
@@ -119,15 +132,35 @@ endif
     </script>
 
     <!-- custom css and js -->
+
+    <!--
     {{ '//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css' | stylesheet_tag }}
     <script
-      src="https://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-      crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+
+
     <script
-      src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"
+    src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"
+    type="text/javascript"
+    defer="defer"></script>
+    -->
+
+    {{ 'https://code.jquery.com/jquery-2.2.4.min.js' | script_tag }}
+    {{ '//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css' | stylesheet_tag }}
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"
+      integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+      crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"
       type="text/javascript"
       defer="defer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.css" />
+
+
   </head>
 
   <body id="{{ page_title | handle }}" class="{% if customer %} customer-logged-in {% endif %} template-{{ template.name }} template-{{ template | replace: '.', ' ' | handle }} no-touch">
@@ -196,16 +229,16 @@ endif
 
       KROWN = {
       settings: {
-                    shop_money_format: '{{ shop.money_format }}',
+                                                                    shop_money_format: '{{ shop.money_format }}',
       cart_action: "{{ settings.cart_action }}",
       routes: {
-                      cart_url: "{{ routes.cart_url }}",
+                                                                      cart_url: "{{ routes.cart_url }}",
       cart_add_url: "{{ routes.cart_add_url }}",
       cart_change_url: "{{ routes.cart_change_url }}",
       predictive_search_url: "{{ routes.predictive_search_url }}"
       },
-                    locales: {
-                      products_add_to_cart_button: `{{ 'products.page.add_to_cart_button' | t }}`,
+                                                                    locales: {
+                                                                      products_add_to_cart_button: `{{ 'products.page.add_to_cart_button' | t }}`,
       products_sold_out_variant: `{{ 'products.page.inventory.sold_out_variant' | t }}`,
       products_unavailable_variant: `{{ 'products.page.inventory.unavailable_variant' | t }}`,
       products_one_product: `{{ 'products.page.inventory.one_product' | t }}`,
@@ -213,15 +246,15 @@ endif
       products_no_products: `{{ 'products.page.inventory.no_products' | t }}`,
       products_preorder: `{{ 'products.page.inventory.preorder' | t }}`,
       products_enough_products: ``,
-                      product_more_description_label: `{{ 'products.page.more_description_label' | t }}`,
+                                                                      product_more_description_label: `{{ 'products.page.more_description_label' | t }}`,
       product_less_description_label: `{{ 'products.page.less_description_label' | t }}`,
       product_sku: `{{ 'products.page.sku' | t }}`,
       product_barcode: `{{ 'products.page.barcode' | t }}`,
       cart_add_error: `{{ 'cart.add_error' | t }}`,
       cart_general_error: `{{ 'cart.general_error' | t }}`
       },
-                    symbols: {
-                      arrow: `{%- render 'theme-symbols', icon: 'arrow-long' -%}`,
+                                                                    symbols: {
+                                                                      arrow: `{%- render 'theme-symbols', icon: 'arrow-long' -%}`,
       zoom_out: `{%- render 'theme-symbols', icon: 'zoom-out' -%}`,
       zoom_in: `{%- render 'theme-symbols', icon: 'zoom-in' -%}`,
       close: `{%- render 'theme-symbols', icon: 'close' -%}`,
@@ -273,8 +306,8 @@ endif
             fill="#000" /></svg>
       </span>`
       },
-                    predictive_search_enabled: "true",
-                    predictive_search_placeholder: `<div class="sidebar__search-results">
+                                                                    predictive_search_enabled: "true",
+                                                                    predictive_search_placeholder: `<div class="sidebar__search-results">
         <a class="search-item blank first">
           <div class="thumbnail"></div>
           <div class="content">
@@ -298,20 +331,20 @@ endif
         </a>
       </div>`
       }
-                }
-            
-                if ( ! JSON.parse(document.getElementById('shopify-features').text).predictiveSearch ) {
-                  KROWN.settings.predictive_search_enabled = "false";
-                  document.querySelector('.sidebar__search.predictive-search').classList.remove('predictive-search');
-                }
+                                                                }
+                                                            
+                                                                if ( ! JSON.parse(document.getElementById('shopify-features').text).predictiveSearch ) {
+                                                                  KROWN.settings.predictive_search_enabled = "false";
+                                                                  document.querySelector('.sidebar__search.predictive-search').classList.remove('predictive-search');
+                                                                }
 
     </script>
 
     <script type="text/javascript">
       if ( 'ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch ) {
       document.querySelector('body').classList.remove('no-touch');
-            		  document.querySelector('body').classList.add('touch');
-            		}
+                                                            		  document.querySelector('body').classList.add('touch');
+                                                            		}
     </script>
 
     <script src="{{ 'component-product-form.js' | asset_url }}" defer></script>

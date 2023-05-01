@@ -97,38 +97,58 @@ if (!window.refreshCart) {
 if (!window.addDatePicker) {
 	const hourNow = new Date().getHours();
 	const todayString = new Date().toLocaleDateString();
+	const datesDisabled = [
+		new Date(2023,4,2),
+		new Date(2023,4,3),
+		new Date(2023,4,4),
+		new Date(2023,4,5),
+		new Date(2023,4,6),
+		new Date(2023,4,7),
+		new Date(2023,4,8),
+		new Date(2023,4,9),
+		new Date(2023,4,10),
+		new Date(2023,4,11)
+	];
+	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString();
+
 	const pickUpSelected = () => {
 		$("#js-pick-up-time").show();
 		$("#date").datepicker({
-			minDate: hourNow > 13 ? +1 : 0,
-			maxDate: '+2M',
-			dateFormat: "dd/mm/yy",
-			onSelect: (dateText) => {
-				if (dateText === todayString) {
-					if (hourNow < 7 || hourNow > 13) {
-						addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
-					} else {
-						addPickupOptionsForTimePicker(setPickUpTime(hourNow + 3, 17, 1));
-					}
-				} else {
+			startDate: hourNow > 13 ? 
+			new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString() :
+			 new Date().toLocaleDateString(),
+			endDate: endDate,
+			datesDisabled: datesDisabled,
+			format: "dd/mm/yy",
+		}).on("changeDate",(e)=>{
+			const dateText = e.format("dd/mm/yyyy")
+			if (dateText === todayString) {
+				if (hourNow < 7 || hourNow > 13) {
 					addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
+				} else {
+					addPickupOptionsForTimePicker(setPickUpTime(hourNow + 3, 17, 1));
 				}
+			} else {
+				addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
 			}
-		});
+		})
 
 	}
 	const DeliverySelected = () => {
 		$("#js-delivery-time").show();
 		$("#date").datepicker({
-			minDate: hourNow > 11 ? +1 : 0,
-			maxDate: '+2M',
-			dateFormat: "dd/mm/yy",
-			onSelect: (dateText) => {
-				if (dateText === todayString && hourNow < 12) {
-					addDeliveryOptionsForTimePicker(SetDeliveryTime(["PM"]));
-				} else {
-					addDeliveryOptionsForTimePicker(SetDeliveryTime(["AM", "PM"]));
-				}
+			startDate: hourNow > 11 ? 
+			new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString() :
+			 new Date().toLocaleDateString(),
+			endDate: endDate,
+			datesDisabled: datesDisabled,
+			format: "dd/mm/yy",
+		}).on("changeDate",(e)=>{
+			const dateText = e.format("dd/mm/yyyy")
+			if (dateText === todayString && hourNow < 12) {
+				addDeliveryOptionsForTimePicker(SetDeliveryTime(["PM"]));
+			} else {
+				addDeliveryOptionsForTimePicker(SetDeliveryTime(["AM", "PM"]));
 			}
 		});
 	}

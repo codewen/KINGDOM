@@ -9,21 +9,24 @@
           "type": "text-icon",
           "settings": {
             "title": "Pickup",
-            "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Monday-Sunday 9am-5pm<\/p>"
+            "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Monday-Sunday 9am-5pm<\/p>",
+            "icon": "earth-globe"
           }
         },
         "00665f2b-5814-4213-853b-3b6c73955a4a": {
           "type": "text-icon",
           "settings": {
             "title": "Delivery",
-            "body": "<p>We deliver from 9am-6pm throughout the day.<\/p><p>Pricing is based on distance from our shop.<\/p><p>Check our <a href=\"\/policies\/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">shipping policy<\/a>.<\/p>"
+            "body": "<p>We deliver from 9am-6pm throughout the day.<\/p><p>Pricing is based on distance from our shop.<\/p><p>Check our <a href=\"\/policies\/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">shipping policy<\/a>.<\/p>",
+            "icon": "earth-globe"
           }
         },
         "913a05c0-114a-4fb7-ba39-047df22f46cf": {
           "type": "text-icon",
           "settings": {
             "title": "Returns",
-            "body": "<p>If you are unhappy with the quality of your arrangement please email us for replacement within 24 hours.<\/p><p>See our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">refund policy<\/a>.<\/p>"
+            "body": "<p>If you are unhappy with the quality of your arrangement please email us for replacement within 24 hours.<\/p><p>See our <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">refund policy<\/a>.<\/p>",
+            "icon": "earth-globe"
           }
         }
       },
@@ -35,7 +38,8 @@
       "settings": {
         "text_alignment": "left",
         "color_text": "#262626",
-        "color_bg": "#f2f2f2"
+        "color_bg": "#f2f2f2",
+        "seo_h_tag": "h3"
       }
     },
     "footer": {
@@ -63,10 +67,10 @@
             "size": ""
           }
         },
-        "7be060a4-88b0-4c0b-baff-0782671bcf23": {
+        "dd55c003-c48f-495c-9535-b59e9b07d865": {
           "type": "newsletter",
           "settings": {
-            "title": "Join our blooms"
+            "title": "Join Our Blooms!"
           }
         }
       },
@@ -74,12 +78,13 @@
         "ef9a5693-5753-47e0-8db0-35773b6db08f",
         "ba419de3-13f8-4d5e-be47-b93dfa9392fb",
         "c8e8f4a6-0e1b-473b-81ca-597ab380f83a",
-        "7be060a4-88b0-4c0b-baff-0782671bcf23"
+        "dd55c003-c48f-495c-9535-b59e9b07d865"
       ],
       "settings": {
         "show_payment_icons": true,
         "show_locale_selector": false,
-        "show_country_selector": false
+        "show_country_selector": false,
+        "seo_h_tag": "h4"
       }
     }
   },

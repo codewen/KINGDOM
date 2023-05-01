@@ -82,7 +82,15 @@
 										<small style="font-style:normal;opacity:.86">
 											{{ p.first }}:
 											{% if p.last contains '/uploads/' %}
-												<a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+												<a href="{{ p.last }}">
+{% assign file_type = p.last | split: '.' | last | downcase %}
+{% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
+{% if file_types contains file_type %}
+  <div class="bcpo-cart-file"><img src="{{ p.last }}" style="max-width: 50px; height: auto;"></div>
+{% else %}
+  <span class="bcpo-cart-file">Uploaded file</span>
+{% endif %}
+</a>
 											{% else %}
 												{{ p.last }}
 											{% endif %}

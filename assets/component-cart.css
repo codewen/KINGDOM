@@ -367,6 +367,12 @@ html[dir=ltr] .template-cart .cart-details>div {
   margin: 0 0 10px 0;
 }
 
+.datepicker table tr td.active.active ,.datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active{
+  background-color: #C75F2FFF;
+  background-image: none;
+}
+
+
 .cart__items {
   margin-bottom: 30px;
 }

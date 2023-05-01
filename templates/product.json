@@ -26,11 +26,6 @@
             "show_quantities": "no"
           }
         },
-        "2544ada4-6a7b-45e2-92e3-8b205e950de3": {
-          "type": "shopify:\/\/apps\/rekaching-subscriptions\/blocks\/sub_plan\/a6cb4897-b17f-41d9-9edd-72a875ee060f",
-          "settings": {
-          }
-        },
         "4e7372bc-9519-453f-97f7-60f93b8c5122": {
           "type": "text",
           "settings": {
@@ -72,7 +67,6 @@
         "a7277df1-c302-4c76-ab31-7d7dd23f0ba7",
         "price",
         "variant_picker",
-        "2544ada4-6a7b-45e2-92e3-8b205e950de3",
         "4e7372bc-9519-453f-97f7-60f93b8c5122",
         "buy_buttons",
         "pickup_avaiability",

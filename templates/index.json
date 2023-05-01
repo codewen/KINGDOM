@@ -13,7 +13,8 @@
             "button_label": "Shop now",
             "url": "",
             "color_text": "rgba(0,0,0,0)",
-            "color_bg": "rgba(0,0,0,0)"
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
           }
         },
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-1": {
@@ -26,7 +27,8 @@
             "button_label": "",
             "url": "",
             "color_text": "rgba(0,0,0,0)",
-            "color_bg": "rgba(0,0,0,0)"
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
           }
         },
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-2": {
@@ -39,7 +41,8 @@
             "button_label": "Tailor now",
             "url": "shopify:\/\/collections\/wedding-event",
             "color_text": "rgba(0,0,0,0)",
-            "color_bg": "rgba(0,0,0,0)"
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
           }
         }
       },
@@ -64,7 +67,8 @@
         "show_view_all": true,
         "layout": "slider",
         "products_number": 12,
-        "collection": "daily-flowers"
+        "collection": "daily-flowers",
+        "seo_h_tag": "h2"
       }
     },
     "16287820898598ef0b": {
@@ -80,7 +84,8 @@
           "type": "heading",
           "settings": {
             "heading": "<p>Explore the colour of the nature<\/p>",
-            "heading_size": "large"
+            "heading_size": "large",
+            "seo_h_tag": "h3"
           }
         },
         "47254a4f-4f22-45de-b525-f39cd6f3e2ec": {
@@ -120,25 +125,25 @@
             "image": "shopify:\/\/shop_images\/IMG_7625.jpg"
           }
         },
+        "323e00c8-3abb-4534-8604-dc2d1509745d": {
+          "type": "collection",
+          "settings": {
+            "collection": "gift-shop"
+          }
+        },
         "336c8af9-b9ad-4c69-9979-a9195e474120": {
           "type": "collection",
           "settings": {
             "collection": "designers-choice",
             "image": "shopify:\/\/shop_images\/6.jpg"
           }
-        },
-        "323e00c8-3abb-4534-8604-dc2d1509745d": {
-          "type": "collection",
-          "settings": {
-            "collection": "gift-shop"
-          }
         }
       },
       "block_order": [
         "162878204691e40114-0",
         "162878204691e40114-1",
-        "336c8af9-b9ad-4c69-9979-a9195e474120",
-        "323e00c8-3abb-4534-8604-dc2d1509745d"
+        "323e00c8-3abb-4534-8604-dc2d1509745d",
+        "336c8af9-b9ad-4c69-9979-a9195e474120"
       ],
       "settings": {
         "layout": "layout-halves",
@@ -155,7 +160,8 @@
           "type": "heading",
           "settings": {
             "heading": "<p>We also do corporate event!<\/p>",
-            "heading_size": "regular"
+            "heading_size": "regular",
+            "seo_h_tag": "h3"
           }
         },
         "8d341477-954b-49f9-ae32-a8b73e3c2009": {
@@ -190,6 +196,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_1057.jpg",
         "video_height": "56.25%",
+        "video_mobile_height": "56.25%",
         "text_width": "75%",
         "text_alignment": "horizontal-center vertical-middle",
         "color_text": "rgba(0,0,0,0)",

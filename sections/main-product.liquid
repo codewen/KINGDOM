@@ -222,7 +222,7 @@
             </product-description>
           {%- endif -%}
 
-        {%- when 'variant_picker' -%}
+        {%- when 'variant_picker' -%} <div class="sa-variant-picker"></div> 
           <product-variants 
             data-variants="{{ product.options_with_values.size }}"
             data-type="select"

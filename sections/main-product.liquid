@@ -118,12 +118,23 @@
 
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
+
     {%- for block in section.blocks -%}
+
+
+    <div class="product__subtitle remove-end-margin
+    body-text-sm ">
+      <p><a href="/pages/hi-flower-lover" target="_blank" title="Hi Flower Lover!">Subscription details</a></p>
+    </div>
+
+
+    
+
       {%- case block.type -%}
 
         {%- when '@app' -%}
           {%- render block -%}
-
+        
         {%- when 'size_guide_popup' -%}
           <div class="product-size-chart" {{ block.shopify_attributes }}>
 
@@ -164,7 +175,12 @@
 
           </div>
 
+
+
+
         {%- when 'text' -%} 
+
+          {%  if collection.handle == "daily-flowers" %} 
           <div class="product__subtitle remove-end-margin
             {% if block.settings.text_style == 'subtitle' %} body-text-sm {% elsif block.settings.text_style == 'uppercase' %} body-text-sm text-transform-uppercase {% endif %}" 
             {{ block.shopify_attributes }}
@@ -174,6 +190,7 @@
 
           </div>
 
+        {% endif %} 
 
         {%- when 'vendor' -%}
           <div class="product__subtitle remove end-margin body-text-sm" {{ block.shopify_attributes }}>

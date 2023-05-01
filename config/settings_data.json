@@ -227,6 +227,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "17870575607751922699": {
+        "type": "shopify:\/\/apps\/product-color-swatches\/blocks\/product-swatches\/3d4801b8-13e2-488f-8d06-69ca04fc155d",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   }

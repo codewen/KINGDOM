@@ -28,6 +28,7 @@
         },
         "0da29287-560a-4213-9857-f0c8c68232b3": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p><a href=\"\/pages\/hi-flower-lover\" title=\"Hi Flower Lover!\">Subscription details<\/a><\/p>",
             "text_style": "body"

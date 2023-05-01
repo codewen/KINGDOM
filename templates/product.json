@@ -8,15 +8,15 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "a7277df1-c302-4c76-ab31-7d7dd23f0ba7": {
           "type": "description",
           "settings": {
             "product_description_truncated": "truncated--disabled"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
           }
         },
         "variant_picker": {
@@ -62,8 +62,8 @@
       },
       "block_order": [
         "title",
-        "price",
         "a7277df1-c302-4c76-ab31-7d7dd23f0ba7",
+        "price",
         "variant_picker",
         "2544ada4-6a7b-45e2-92e3-8b205e950de3",
         "4e7372bc-9519-453f-97f7-60f93b8c5122",

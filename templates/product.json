@@ -29,7 +29,7 @@
         "1401f5ae-2598-48a0-947d-fdbbfe7c11c4": {
           "type": "text",
           "settings": {
-            "text": "<p><a href=\"\/pages\/hi-flower-lover\" title=\"Hi Flower Lover!\">Subscription details<\/a><\/p>",
+            "text": "<p><a href=\"\/pages\/hi-flower-lover\" target=\"_blank\" title=\"Hi Flower Lover!\">Subscription details<\/a><\/p>",
             "text_style": "body"
           }
         },

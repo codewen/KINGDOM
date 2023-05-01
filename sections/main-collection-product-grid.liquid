@@ -5,13 +5,18 @@
   endif
 -%}
 
+
+
 <div id="CollectionProductGrid">
 
   {%- paginate collection.products by section.settings.products_number -%}
-    
+
     <div class="gutter--on">
 
-      <div id="main-collection-product-grid" data-id="{{ section.id }}" class="collection collection--{{ settings.grid_style }} collection--grid mount-collection">
+      <div
+        id="main-collection-product-grid"
+        data-id="{{ section.id }}"
+        class="collection collection--{{ settings.grid_style }} collection--grid mount-collection">
 
         {%- for product in collection.products -%}
           {%- render 'product-item', product_collection: collection, product: product, index: forloop.index -%}
@@ -25,10 +30,10 @@
               endif
               assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
             -%}
-              <p style="margin-inline-start:calc(var(--grid-gutter)/2); margin-top: 1.5em" class="no-content-message">
-                {{ 'collections.empty' | t }}<br/>
-                {{ 'collections.use_fewer_filters_html' | t: link: results_url, class: 'button--text' }}
-              </p>
+            <p style="margin-inline-start:calc(var(--grid-gutter)/2); margin-top: 1.5em" class="no-content-message">
+              {{ 'collections.empty' | t }}<br/>
+              {{ 'collections.use_fewer_filters_html' | t: link: results_url, class: 'button--text' }}
+            </p>
           {%- else %}
             <p style="margin-inline-start:calc(var(--grid-gutter)/2)" class="no-content-message">
               {{ 'products.grid.no_products_text' | t }}
@@ -50,15 +55,44 @@
 
 </div>
 
+
+{% if collection.handle == "wedding-event" %}
+  <div class="rich-text__content" style="text-align: left; margin: 0 50px">
+    <h3 class="rich-text__title  h1 ">
+      <p>Quote for Full Service</p>
+    </h3>
+    <div class="rich-text__body rte">
+      <p>Our floral experts will help you plan every detail for your perfect day. We offer a comprehensive range of services, including personalised consultations, customised quotes, and access to unique and rare blooms. We'll work closely with you to create a stunning floral design that perfectly captures your vision.</p>
+    </div>
+    <div class="rich-text__button">
+      <a
+        class="button button--outline"
+        href="https://form-builder-bn.pifyapp.com/form/s/7095"
+        target="_blank"
+        title="Quote Now">Quote Now</a>
+    </div>
+  </div>
+{% endif %}
+
+
+
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-  <sidebar-drawer data-overlay="sidebar" class="collection__filters sidebar-parent-element" style="display:none">
+  <sidebar-drawer
+    data-overlay="sidebar"
+    class="collection__filters sidebar-parent-element"
+    style="display:none">
     <div class="sidebar-element sidebar-element--right-side">
-      <span class="collection__filters-close sidebar-close-element" data-js-close tabindex="0">
+      <span
+        class="collection__filters-close sidebar-close-element"
+        data-js-close
+        tabindex="0">
         <span class="visually-hidden">{{ 'general.accessibility_labels.close' | t }}</span>
         <span aria-hidden="true">{%- render 'theme-symbols', icon: 'close' -%}</span>
       </span>
       <div class="collection__filters-holder sidebar-content-element">
-        <div class="collection__filters-title body-text-sm sidebar-title-element"><span>{{ 'collections.filter_and_sort' | t }}</span></div>
+        <div class="collection__filters-title body-text-sm sidebar-title-element">
+          <span>{{ 'collections.filter_and_sort' | t }}</span>
+        </div>
         {%- render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, type: 'mobile' -%}
       </div>
     </div>
@@ -71,9 +105,15 @@
   assign color_grid_text = settings.grid_color_text
 -%}
 {% style %}
-  :root {
-    --color-grid-bg: {{ color_grid_bg | color_extract: 'red' }}, {{ color_grid_bg | color_extract: 'green' }}, {{ color_grid_bg | color_extract: 'blue' }};
-    --color-grid-text: {{ color_grid_text | color_extract: 'red' }}, {{ color_grid_text | color_extract: 'green' }}, {{ color_grid_text | color_extract: 'blue' }};
+  :root  {
+    --color-grid-bg: {{ color_grid_bg | color_extract: 'red' }}
+    , {{ color_grid_bg | color_extract: 'green' }}
+    , {{ color_grid_bg | color_extract: 'blue' }}
+    ;
+    --color-grid-text: {{ color_grid_text | color_extract: 'red' }}
+    , {{ color_grid_text | color_extract: 'green' }}
+    , {{ color_grid_text | color_extract: 'blue' }}
+    ;
   }
 {% endstyle %}
 
@@ -90,19 +130,16 @@
         "max": 48,
         "step": 4,
         "default": 24
-      },
-      {
+      }, {
         "type": "header",
         "content": "t:sections.main-collection-product-grid.settings.header__1.content"
-      },
-      {
+      }, {
         "id": "enable_filtering",
         "type": "checkbox",
         "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
         "default": true,
         "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
-      },
-      {
+      }, {
         "id": "enable_sorting",
         "type": "checkbox",
         "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label",

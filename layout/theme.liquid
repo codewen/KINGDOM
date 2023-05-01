@@ -11,7 +11,17 @@ endif
   lang="{{ request.locale.iso_code }}"
   dir="{{ direction }}">
 
-  <head>
+  <head> 
+        <script src='{{ 'subscription-plan-selector-js.js' | asset_url }}' defer='defer' ></script>
+        <script id='sealoop_product' type='application/json'>
+              {{ product | json }}
+        </script>
+        <script id='sealoop_product_selected_or_first_variant' type='application/json'>
+              {{ product.selected_or_first_available_variant.id | json }}
+        </script>
+        <script id='sealoop_money_format' type='application/json'>
+            {{shop.money_format | json}}
+        </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

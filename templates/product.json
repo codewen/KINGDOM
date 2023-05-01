@@ -58,6 +58,13 @@
             "page": "size-guide",
             "open_mode": "popup"
           }
+        },
+        "cf4eb7b7-5f2b-43ad-a7de-bdfccb838206": {
+          "type": "complementary",
+          "settings": {
+            "heading": "More Cute Stuff",
+            "products_number": 8
+          }
         }
       },
       "block_order": [
@@ -69,7 +76,8 @@
         "4e7372bc-9519-453f-97f7-60f93b8c5122",
         "buy_buttons",
         "pickup_avaiability",
-        "d917a283-18e0-4e5e-98d4-cb05d6ab8575"
+        "d917a283-18e0-4e5e-98d4-cb05d6ab8575",
+        "cf4eb7b7-5f2b-43ad-a7de-bdfccb838206"
       ],
       "settings": {
         "gallery_style": "slider",

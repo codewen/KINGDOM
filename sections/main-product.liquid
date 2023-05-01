@@ -127,18 +127,22 @@
         {%- when 'size_guide_popup' -%}
           <div class="product-size-chart" {{ block.shopify_attributes }}>
 
-            <a class="size-chart-link {% if block.settings.open_mode == "popup" %} js-toggle-size-chart-modal {% endif %}" 
-              {% if block.settings.page != blank %} href="{{ block.settings.page.url }}" {% endif %} 
-              {% if block.settings.open_mode == "blank" %} target="_blank" {% endif %}
-            >
-              {%- liquid 
-                if block.settings.has_icon
-                  render 'theme-symbols', icon: 'size-chart'
-                endif
-                echo block.settings.label | escape | prepend: '<span>' | append: '</span>'
-              -%}
-            </a>
-            
+          {%  if collection.handle == "daily-flowers" %} 
+              <a class="size-chart-link {% if block.settings.open_mode == "popup" %} js-toggle-size-chart-modal {% endif %}" 
+            {% if block.settings.page != blank %} href="{{ block.settings.page.url }}" {% endif %} 
+            {% if block.settings.open_mode == "blank" %} target="_blank" {% endif %}
+          >
+            {%- liquid 
+              if block.settings.has_icon
+                render 'theme-symbols', icon: 'size-chart'
+              endif
+              echo block.settings.label | escape | prepend: '<span>' | append: '</span>'
+            -%}
+          </a>
+         {% endif %} 
+          
+          
+
             <div id="size-chart-modal" aria-hidden="true" style="display:none">
               <div class="size-chart-modal">
                 {% if block.settings.open_mode == "popup" %}
@@ -165,8 +169,12 @@
             {% if block.settings.text_style == 'subtitle' %} body-text-sm {% elsif block.settings.text_style == 'uppercase' %} body-text-sm text-transform-uppercase {% endif %}" 
             {{ block.shopify_attributes }}
           >
+
+          {%  if collection.handle == "daily-flowers"%} 
             {{ block.settings.text }}
+          {% endif %}
           </div>
+
 
         {%- when 'vendor' -%}
           <div class="product__subtitle remove end-margin body-text-sm" {{ block.shopify_attributes }}>

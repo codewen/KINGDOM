@@ -26,6 +26,13 @@
             "show_quantities": "no"
           }
         },
+        "0da29287-560a-4213-9857-f0c8c68232b3": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"\/pages\/hi-flower-lover\" title=\"Hi Flower Lover!\">Subscription details<\/a><\/p>",
+            "text_style": "body"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -60,6 +67,7 @@
         "a7277df1-c302-4c76-ab31-7d7dd23f0ba7",
         "price",
         "variant_picker",
+        "0da29287-560a-4213-9857-f0c8c68232b3",
         "buy_buttons",
         "pickup_avaiability",
         "d917a283-18e0-4e5e-98d4-cb05d6ab8575",

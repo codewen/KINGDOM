@@ -13,6 +13,7 @@
     },
     "cart-recommendations": {
       "type": "main-cart-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like"
       }

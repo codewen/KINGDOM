@@ -194,6 +194,7 @@
     "1628782217b36bf2bd": {
       "type": "video-background",
       "settings": {
+        "video_object": "shopify:\/\/files\/videos\/video.mp4",
         "image": "shopify:\/\/shop_images\/IMG_1057.jpg",
         "video_height": "56.25%",
         "video_mobile_height": "56.25%",

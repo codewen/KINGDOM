@@ -2,6 +2,36 @@
   "type": "footer",
   "name": "t:sections.refactor_words.labels.footer_group",
   "sections": {
+    "474d772e-c2ad-487c-88bc-ee480cf1399e": {
+      "type": "testimonials",
+      "blocks": {
+        "sections--15155421118537__474d772e-c2ad-487c-88bc-ee480cf1399e-1683007769b0a8fbb7-0": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "",
+            "author_name": "",
+            "author_title": ""
+          }
+        },
+        "sections--15155421118537__474d772e-c2ad-487c-88bc-ee480cf1399e-1683007769b0a8fbb7-1": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "quote": "",
+            "author_name": "Author",
+            "author_title": "Customer"
+          }
+        }
+      },
+      "block_order": [
+        "sections--15155421118537__474d772e-c2ad-487c-88bc-ee480cf1399e-1683007769b0a8fbb7-0",
+        "sections--15155421118537__474d772e-c2ad-487c-88bc-ee480cf1399e-1683007769b0a8fbb7-1"
+      ],
+      "settings": {
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "rgba(0,0,0,0)"
+      }
+    },
     "text-columns-with-icons": {
       "type": "text-columns-with-icons",
       "blocks": {
@@ -89,6 +119,7 @@
     }
   },
   "order": [
+    "474d772e-c2ad-487c-88bc-ee480cf1399e",
     "text-columns-with-icons",
     "footer"
   ]

@@ -19,49 +19,10 @@
         "enable_filtering": false,
         "enable_sorting": false
       }
-    },
-    "8138babc-1492-4e94-bcb1-252780790f03": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15155421741129__8138babc-1492-4e94-bcb1-252780790f03-168078067694be2e62-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Quote for Full Service<\/p>",
-            "heading_size": "regular",
-            "seo_h_tag": "h3"
-          }
-        },
-        "template--15155421741129__8138babc-1492-4e94-bcb1-252780790f03-168078067694be2e62-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our floral experts will help you plan every detail for your perfect day. We offer a comprehensive range of services, including personalised consultations, customised quotes, and access to unique and rare blooms. We'll work closely with you to create a stunning floral design that perfectly captures your vision.<\/p>"
-          }
-        },
-        "template--15155421741129__8138babc-1492-4e94-bcb1-252780790f03-168078067694be2e62-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Quote Now",
-            "button_link": "https:\/\/form-builder-bn.pifyapp.com\/form\/s\/7095"
-          }
-        }
-      },
-      "block_order": [
-        "template--15155421741129__8138babc-1492-4e94-bcb1-252780790f03-168078067694be2e62-0",
-        "template--15155421741129__8138babc-1492-4e94-bcb1-252780790f03-168078067694be2e62-1",
-        "template--15155421741129__8138babc-1492-4e94-bcb1-252780790f03-168078067694be2e62-2"
-      ],
-      "settings": {
-        "text_alignment": "left",
-        "image_position": "align-left",
-        "image_height": "75vh",
-        "color_text": "rgba(0,0,0,0)",
-        "color_bg": "rgba(0,0,0,0)"
-      }
     }
   },
   "order": [
     "banner",
-    "product-grid",
-    "8138babc-1492-4e94-bcb1-252780790f03"
+    "product-grid"
   ]
 }

@@ -96,7 +96,7 @@ if (!window.refreshCart) {
 
 if (!window.addDatePicker) {
 	const hourNow = new Date().getHours();
-	const todayString = new Date().toLocaleDateString();
+	const todayString = new Date().toLocaleDateString("en-GB");
 	const datesDisabled = [
 		new Date(2023, 4, 2),
 		new Date(2023, 4, 3),
@@ -109,14 +109,14 @@ if (!window.addDatePicker) {
 		new Date(2023, 4, 10),
 		new Date(2023, 4, 11)
 	];
-	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString();
+	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString("en-GB");
 
 	const pickUpSelected = () => {
 		$("#js-pick-up-time").show();
 		$("#date").datepicker({
 			startDate: hourNow > 13 ?
-				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString() :
-				new Date().toLocaleDateString(),
+				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString("en-GB") :
+				new Date().toLocaleDateString("en-GB"),
 			endDate: endDate,
 			datesDisabled: datesDisabled,
 			format: "dd/mm/yy",
@@ -138,8 +138,8 @@ if (!window.addDatePicker) {
 		$("#js-delivery-time").show();
 		$("#date").datepicker({
 			startDate: hourNow > 11 ?
-				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString() :
-				new Date().toLocaleDateString(),
+				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString("en-GB") :
+				new Date().toLocaleDateString("en-GB"),
 			endDate: endDate,
 			datesDisabled: datesDisabled,
 			format: "dd/mm/yy",

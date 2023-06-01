@@ -75,14 +75,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "ef9a5693-5753-47e0-8db0-35773b6db08f": {
-          "type": "text",
-          "settings": {
-            "title": "12 Abercrombie St, Chippendale, NSW Australia",
-            "content": "<p>Monday - Sunday 9am - 5pm<\/p><p>(02) 9564 1054<\/p>",
-            "size": ""
-          }
-        },
         "ba419de3-13f8-4d5e-be47-b93dfa9392fb": {
           "type": "social",
           "settings": {
@@ -105,7 +97,6 @@
         }
       },
       "block_order": [
-        "ef9a5693-5753-47e0-8db0-35773b6db08f",
         "ba419de3-13f8-4d5e-be47-b93dfa9392fb",
         "c8e8f4a6-0e1b-473b-81ca-597ab380f83a",
         "dd55c003-c48f-495c-9535-b59e9b07d865"

@@ -107,7 +107,7 @@
           "bar_show": true,
           "bar_show_on_homepage": false,
           "bar_show_dismiss": false,
-          "bar_message": "Order by 12pm for same day delivery!",
+          "bar_message": "Order by 12pm for same day delivery! Free Delivery for order over $150 (Using Code '150FREE' at checkout)",
           "bar_link": "shopify:\/\/collections\/daily-flowers",
           "bar_bgcolor": "#ae6359",
           "bar_txtcolor": "#ffffff"

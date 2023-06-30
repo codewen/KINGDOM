@@ -12,7 +12,7 @@
             "caption": "",
             "button_label": "Order Now",
             "url": "shopify:\/\/products\/large-wrapped-flowers",
-            "color_text": "#fff",
+            "color_text": "#ffffff",
             "color_bg": "rgba(0,0,0,0)",
             "seo_h_tag": "h2"
           }
@@ -131,7 +131,7 @@
           "type": "collection",
           "settings": {
             "collection": "daily-flowers",
-            "image": "shopify:\/\/shop_images\/receive.jpg"
+            "image": "shopify:\/\/shop_images\/f62274a35f121c56ffdbf6b9ac38ad5c.jpg"
           }
         },
         "162878204691e40114-1": {

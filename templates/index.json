@@ -149,9 +149,17 @@
         },
         "336c8af9-b9ad-4c69-9979-a9195e474120": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "designers-choice",
             "image": "shopify:\/\/shop_images\/6.jpg"
+          }
+        },
+        "01558215-ae35-4291-8a17-0b762cf0f3ff": {
+          "type": "collection",
+          "settings": {
+            "collection": "birthday",
+            "image": "shopify:\/\/shop_images\/c9892be577100d869073c9461d0ae629.jpg"
           }
         }
       },
@@ -159,7 +167,8 @@
         "162878204691e40114-0",
         "162878204691e40114-1",
         "323e00c8-3abb-4534-8604-dc2d1509745d",
-        "336c8af9-b9ad-4c69-9979-a9195e474120"
+        "336c8af9-b9ad-4c69-9979-a9195e474120",
+        "01558215-ae35-4291-8a17-0b762cf0f3ff"
       ],
       "settings": {
         "layout": "layout-halves",

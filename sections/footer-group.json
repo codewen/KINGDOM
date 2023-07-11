@@ -39,7 +39,7 @@
           "type": "text-icon",
           "settings": {
             "title": "Pickup",
-            "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Monday-Sunday 9am-5pm<\/p>",
+            "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Weekday: 9am-5pm <br> Weekend: 10am-4pm<\/p>",
             "icon": "earth-globe"
           }
         },

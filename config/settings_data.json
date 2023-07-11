@@ -132,7 +132,7 @@
             "type": "text-icon",
             "settings": {
               "title": "Pickup",
-              "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Monday-Sunday 9am-5pm<\/p>"
+              "body": "<p><strong>FREE<\/strong> in-store pickup at our Chippendale flower shop<\/p><p>Weekday: 9am-5pm <br> Weekend: 10am-4pm<\/p>"
             }
           },
           "00665f2b-5814-4213-853b-3b6c73955a4a": {
@@ -168,7 +168,7 @@
             "type": "text",
             "settings": {
               "title": "12 Abercrombie St, Chippendale, NSW Australia",
-              "content": "<p>Monday - Sunday 9am - 5pm<\/p>",
+              "content": "<p>Weekday: 9am-5pm <br> Weekend: 10am-4pm<\/p>",
               "size": ""
             }
           },
@@ -218,15 +218,12 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "10051081676463192982": {
         "type": "shopify:\/\/apps\/rekaching-subscriptions\/blocks\/sub_account\/a6cb4897-b17f-41d9-9edd-72a875ee060f",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   }

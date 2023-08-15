@@ -218,13 +218,8 @@
         }
       }
     },
-    "content_for_index": [],
-    "blocks": {
-      "10051081676463192982": {
-        "type": "shopify:\/\/apps\/rekaching-subscriptions\/blocks\/sub_account\/a6cb4897-b17f-41d9-9edd-72a875ee060f",
-        "disabled": false,
-        "settings": {}
-      }
-    }
+    "content_for_index": [
+
+    ]
   }
 }

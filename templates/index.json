@@ -5,6 +5,7 @@
       "blocks": {
         "16de48e9-4936-42c2-b590-95596f31aa31": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/IMG_4048_4_3a529190-e9c1-44a1-b57d-59c213bdb96b.jpg",
             "title": "Free Delivery for order over $150",

@@ -96,18 +96,10 @@ if (!window.refreshCart) {
 
 if (!window.addDatePicker) {
 	const hourNow = new Date().getHours();
+	$('#hourNow').val(hourNow)
 	const todayString = new Date().toLocaleDateString("en-GB");
 	const datesDisabled = [
-		new Date(2023, 4, 2),
-		new Date(2023, 4, 3),
-		new Date(2023, 4, 4),
-		new Date(2023, 4, 5),
-		new Date(2023, 4, 6),
-		new Date(2023, 4, 7),
-		new Date(2023, 4, 8),
-		new Date(2023, 4, 9),
-		new Date(2023, 4, 10),
-		new Date(2023, 4, 11)
+		new Date(2023, 7, 27)
 	];
 	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString("en-GB");
 

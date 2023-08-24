@@ -99,7 +99,7 @@ if (!window.addDatePicker) {
 	$('#hourNow').val(hourNow)
 	const todayString = new Date().toLocaleDateString("en-GB");
 	const datesDisabled = [
-		new Date(2023, 7, 27)
+		new Date(2023, 7, 28)
 	];
 	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString("en-GB");
 

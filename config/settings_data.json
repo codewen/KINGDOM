@@ -107,7 +107,7 @@
           "bar_show": true,
           "bar_show_on_homepage": false,
           "bar_show_dismiss": false,
-          "bar_message": "Place order by 12pm to get same day delivery!",
+          "bar_message": "Place order by 12pm for same day delivery!",
           "bar_link": "shopify:\/\/collections\/daily-flowers",
           "bar_bgcolor": "#ae6359",
           "bar_txtcolor": "#ffffff"

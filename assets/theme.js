@@ -99,8 +99,9 @@ if (!window.addDatePicker) {
 	$('#hourNow').val(hourNow)
 	const todayString = new Date().toLocaleDateString("en-GB");
 	const datesDisabled = [
-		new Date(2023, 7, 28)
+		new Date(2023, 9, 2)
 	];
+  
 	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString("en-GB");
 
 	const pickUpSelected = () => {
@@ -110,7 +111,7 @@ if (!window.addDatePicker) {
 				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString("en-GB") :
 				new Date().toLocaleDateString("en-GB"),
 			endDate: endDate,
-			datesDisabled: datesDisabled,
+			
 			format: "dd/mm/yy",
 		}).on("changeDate", (e) => {
 			const dateText = e.format("dd/mm/yyyy")

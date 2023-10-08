@@ -98,7 +98,10 @@ if (!window.addDatePicker) {
 	const hourNow = new Date().getHours();
 	$('#hourNow').val(hourNow)
 	const todayString = new Date().toLocaleDateString("en-GB");
-	const datesDisabled = [
+	const datesDisabledPickUp = [
+		"2/10/2023"
+	];
+	const datesDisabledDelivery = [
 		"2/10/2023"
 	];
   
@@ -111,7 +114,7 @@ if (!window.addDatePicker) {
 				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString("en-GB") :
 				new Date().toLocaleDateString("en-GB"),
 			endDate: endDate,
-			
+			datesDisabled: datesDisabledPickUp,
 			format: "dd/mm/yy",
 		}).on("changeDate", (e) => {
 			const dateText = e.format("dd/mm/yyyy")
@@ -134,7 +137,8 @@ if (!window.addDatePicker) {
 				new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString("en-GB") :
 				new Date().toLocaleDateString("en-GB"),
 			endDate: endDate,
-			datesDisabled: datesDisabled,
+			daysOfWeekDisabled: [0],
+			datesDisabled: datesDisabledDelivery,
 			format: "dd/mm/yy",
 		}).on("changeDate", (e) => {
 			const dateText = e.format("dd/mm/yyyy")

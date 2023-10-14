@@ -118,14 +118,20 @@ if (!window.addDatePicker) {
 			format: "dd/mm/yy",
 		}).on("changeDate", (e) => {
 			const dateText = e.format("dd/mm/yyyy")
+			
+			//Sat&Sun we open from 10am - 4pm, So last pick up time is 4 pm
+			let lastHourToPickUp = 17;
+			if (e.date.getDay() === 0 || e.date.getDay() === 6){
+				lastHourToPickUp = 16
+			}
 			if (dateText === todayString) {
 				if (hourNow < 7 || hourNow > 13) {
-					addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
+					addPickupOptionsForTimePicker(setPickUpTime(10, lastHourToPickUp, 1));
 				} else {
-					addPickupOptionsForTimePicker(setPickUpTime(hourNow + 3, 17, 1));
+					addPickupOptionsForTimePicker(setPickUpTime(hourNow + 3, lastHourToPickUp, 1));
 				}
 			} else {
-				addPickupOptionsForTimePicker(setPickUpTime(10, 17, 1));
+				addPickupOptionsForTimePicker(setPickUpTime(10, lastHourToPickUp, 1));
 			}
 		})
 

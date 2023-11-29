@@ -6,7 +6,7 @@
 
       ],
       "settings": {
-        "show_collection_description": false,
+        "show_collection_description": true,
         "show_collection_image": false,
         "color_text": "rgba(0,0,0,0)",
         "color_bg": "rgba(0,0,0,0)"
@@ -16,7 +16,7 @@
       "type": "heading",
       "settings": {
         "title": "",
-        "seo_h_tag": "h1"
+        "seo_h_tag": "span"
       }
     },
     "product-grid": {

@@ -3,6 +3,20 @@
     "a5a91782-5b55-4af2-9cff-9a54b3fdd928": {
       "type": "slider-horizontal",
       "blocks": {
+        "6c08110e-d2b3-47c7-bc24-c6fc77b6d780": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11039b7ec1f556a2cf5d3d60328a85ae.jpg",
+            "title": "Order now for Christmas",
+            "subheading": "",
+            "caption": "Pastorale Holiday Flowers.",
+            "button_label": "Shop",
+            "url": "",
+            "color_text": "#ffffff",
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
+          }
+        },
         "16de48e9-4936-42c2-b590-95596f31aa31": {
           "type": "image",
           "disabled": true,
@@ -63,6 +77,7 @@
         }
       },
       "block_order": [
+        "6c08110e-d2b3-47c7-bc24-c6fc77b6d780",
         "16de48e9-4936-42c2-b590-95596f31aa31",
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-0",
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-1",

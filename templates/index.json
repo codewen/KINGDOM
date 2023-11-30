@@ -3,6 +3,20 @@
     "a5a91782-5b55-4af2-9cff-9a54b3fdd928": {
       "type": "slider-horizontal",
       "blocks": {
+        "7e3f7674-75ef-4c87-864a-49280cd4d05a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PB290243.jpg",
+            "title": "Place order at our Daily Blooms Menu",
+            "subheading": "We will make it more festive for all Christmas order!",
+            "caption": "",
+            "button_label": "Order now",
+            "url": "shopify:\/\/collections\/daily-flowers",
+            "color_text": "#000000",
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
+          }
+        },
         "6c08110e-d2b3-47c7-bc24-c6fc77b6d780": {
           "type": "image",
           "settings": {
@@ -77,6 +91,7 @@
         }
       },
       "block_order": [
+        "7e3f7674-75ef-4c87-864a-49280cd4d05a",
         "6c08110e-d2b3-47c7-bc24-c6fc77b6d780",
         "16de48e9-4936-42c2-b590-95596f31aa31",
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-0",

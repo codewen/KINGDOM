@@ -99,10 +99,16 @@ if (!window.addDatePicker) {
 	$('#hourNow').val(hourNow)
 	const todayString = new Date().toLocaleDateString("en-GB");
 	const datesDisabledPickUp = [
-		"2/10/2023"
+		"2/10/2023",
+        "25/12/2023",
+        "26/12/2023",
+        "01/01/2024",
 	];
 	const datesDisabledDelivery = [
-		"2/10/2023"
+		"2/10/2023",
+        "25/12/2023",
+        "26/12/2023",
+        "01/01/2024",
 	];
   
 	const endDate = new Date(new Date().setDate(new Date().getDate() + 60)).toLocaleDateString("en-GB");

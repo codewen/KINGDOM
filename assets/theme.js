@@ -160,7 +160,6 @@ if (!window.addDatePicker) {
               ).toLocaleDateString("en-GB")
             : new Date().toLocaleDateString("en-GB"),
         endDate: endDate,
-        daysOfWeekDisabled: [0],
         datesDisabled: datesDisabledDelivery,
         format: "dd/mm/yy",
       })

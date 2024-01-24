@@ -3,8 +3,23 @@
     "a5a91782-5b55-4af2-9cff-9a54b3fdd928": {
       "type": "slider-horizontal",
       "blocks": {
+        "image_g4ETPi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_7625_6909d39b-905c-4ea9-bb56-3b5f91ef41e1.jpg",
+            "title": "Order now for Valentine's Day",
+            "subheading": "",
+            "caption": "",
+            "button_label": "Shop",
+            "url": "",
+            "color_text": "rgba(0,0,0,0)",
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
+          }
+        },
         "7e3f7674-75ef-4c87-864a-49280cd4d05a": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/PB290243.jpg",
             "title": "Place order at our Daily Blooms Menu",
@@ -19,6 +34,7 @@
         },
         "6c08110e-d2b3-47c7-bc24-c6fc77b6d780": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/11039b7ec1f556a2cf5d3d60328a85ae.jpg",
             "title": "Order now for Christmas",
@@ -61,6 +77,20 @@
             "seo_h_tag": "h2"
           }
         },
+        "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_4021.jpg",
+            "title": "Order for your Big Day!",
+            "subheading": "",
+            "caption": "Select all your needs, then call it a day.",
+            "button_label": "Tailor now",
+            "url": "shopify:\/\/collections\/wedding-event",
+            "color_text": "rgba(0,0,0,0)",
+            "color_bg": "rgba(0,0,0,0)",
+            "seo_h_tag": "h2"
+          }
+        },
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-1": {
           "type": "image",
           "settings": {
@@ -74,29 +104,16 @@
             "color_bg": "rgba(0,0,0,0)",
             "seo_h_tag": "h2"
           }
-        },
-        "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4021.jpg",
-            "title": "Order for your Big Day!",
-            "subheading": "Select all your needs, then call it a day.",
-            "caption": "",
-            "button_label": "Tailor now",
-            "url": "shopify:\/\/collections\/wedding-event",
-            "color_text": "rgba(0,0,0,0)",
-            "color_bg": "rgba(0,0,0,0)",
-            "seo_h_tag": "h2"
-          }
         }
       },
       "block_order": [
+        "image_g4ETPi",
         "7e3f7674-75ef-4c87-864a-49280cd4d05a",
         "6c08110e-d2b3-47c7-bc24-c6fc77b6d780",
         "16de48e9-4936-42c2-b590-95596f31aa31",
         "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-0",
-        "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-1",
-        "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-2"
+        "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-2",
+        "template--15073436598345__a5a91782-5b55-4af2-9cff-9a54b3fdd928-1669870201f8c8242d-1"
       ],
       "settings": {
         "size": "80vh",

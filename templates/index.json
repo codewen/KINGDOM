@@ -6,12 +6,12 @@
         "image_g4ETPi": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_7625_6909d39b-905c-4ea9-bb56-3b5f91ef41e1.jpg",
+            "image": "shopify:\/\/shop_images\/IMG_0292.jpg",
             "title": "Order now for Valentine's Day",
             "subheading": "",
             "caption": "",
             "button_label": "Shop",
-            "url": "",
+            "url": "shopify:\/\/collections\/valentines-day",
             "color_text": "rgba(0,0,0,0)",
             "color_bg": "rgba(0,0,0,0)",
             "seo_h_tag": "h2"

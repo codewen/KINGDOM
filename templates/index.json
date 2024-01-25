@@ -117,7 +117,7 @@
       ],
       "settings": {
         "size": "80vh",
-        "mobile_size": "60vh",
+        "mobile_size": "80vh",
         "text_size": "regular",
         "alignment": "horizontal-left vertical-bottom",
         "gutter_enabled": false

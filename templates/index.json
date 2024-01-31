@@ -182,8 +182,16 @@
             "image": "shopify:\/\/shop_images\/f62274a35f121c56ffdbf6b9ac38ad5c.jpg"
           }
         },
+        "336c8af9-b9ad-4c69-9979-a9195e474120": {
+          "type": "collection",
+          "settings": {
+            "collection": "designers-choice",
+            "image": "shopify:\/\/shop_images\/6.jpg"
+          }
+        },
         "162878204691e40114-1": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "rose",
             "image": "shopify:\/\/shop_images\/IMG_7625.jpg"
@@ -193,14 +201,6 @@
           "type": "collection",
           "settings": {
             "collection": "gift-shop"
-          }
-        },
-        "336c8af9-b9ad-4c69-9979-a9195e474120": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "designers-choice",
-            "image": "shopify:\/\/shop_images\/6.jpg"
           }
         },
         "01558215-ae35-4291-8a17-0b762cf0f3ff": {
@@ -213,9 +213,9 @@
       },
       "block_order": [
         "162878204691e40114-0",
+        "336c8af9-b9ad-4c69-9979-a9195e474120",
         "162878204691e40114-1",
         "323e00c8-3abb-4534-8604-dc2d1509745d",
-        "336c8af9-b9ad-4c69-9979-a9195e474120",
         "01558215-ae35-4291-8a17-0b762cf0f3ff"
       ],
       "settings": {

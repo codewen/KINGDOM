@@ -106,7 +106,7 @@ if (!window.addDatePicker) {
   //add black out date here, format:
   const datesDisabledBoth = ["26/01/2024"];
   const datesDisabledPickUp = [...datesDisabledBoth];
-  const datesDisabledDelivery = [...datesDisabledBoth];
+  const datesDisabledDelivery = [...datesDisabledBoth, "14/02/2024"];
 
   const endDate = new Date(
     new Date().setDate(new Date().getDate() + 60)

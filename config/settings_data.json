@@ -228,9 +228,9 @@
         "settings": {
           "button_color": "#c75f2f",
           "button_icon": "chat_bubble",
+          "button_text": "no_text",
           "button_horizontal_position": "bottom_right",
           "button_vertical_position": "lowest",
-          "button_text": "no_text",
           "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
       }

@@ -5,6 +5,7 @@
       "blocks": {
         "image_g4ETPi": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/IMG_0292.jpg",
             "title": "Order now for Valentine's Day",

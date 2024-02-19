@@ -5,6 +5,27 @@
       "settings": {
       }
     },
+    "rich_text_FHN4cr": {
+      "type": "rich-text",
+      "blocks": {
+        "text_9WxiiL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please read our <a href=\"\/policies\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">shipping policy<\/a> before check out<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_9WxiiL"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "image_position": "align-left",
+        "image_height": "75vh",
+        "color_text": "rgba(0,0,0,0)",
+        "color_bg": "rgba(0,0,0,0)"
+      }
+    },
     "1680663427dfb4e09b": {
       "type": "apps",
       "settings": {
@@ -36,6 +57,7 @@
   },
   "order": [
     "cart-items",
+    "rich_text_FHN4cr",
     "1680663427dfb4e09b",
     "cart-recommendations",
     "cart-footer"

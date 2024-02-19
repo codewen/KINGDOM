@@ -184,7 +184,7 @@
       },
       "loading_reviews": "Loading more reviews",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "shipping_policy_html": "Please read our <a href=\"{{ link }}\">Shipping policy<\/a> before checkout, shipping fee calculated at checkout.",
       "view_in_space": "View in your space",
       "view_in_space_label": "View in your space, loads item in augmented reality window"
     },

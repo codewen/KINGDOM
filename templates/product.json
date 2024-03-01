@@ -45,15 +45,6 @@
           "settings": {
           }
         },
-        "d917a283-18e0-4e5e-98d4-cb05d6ab8575": {
-          "type": "size_guide_popup",
-          "settings": {
-            "label": "Size guide",
-            "has_icon": true,
-            "page": "size-guide",
-            "open_mode": "popup"
-          }
-        },
         "cf4eb7b7-5f2b-43ad-a7de-bdfccb838206": {
           "type": "complementary",
           "settings": {
@@ -70,7 +61,6 @@
         "1401f5ae-2598-48a0-947d-fdbbfe7c11c4",
         "buy_buttons",
         "pickup_avaiability",
-        "d917a283-18e0-4e5e-98d4-cb05d6ab8575",
         "cf4eb7b7-5f2b-43ad-a7de-bdfccb838206"
       ],
       "settings": {

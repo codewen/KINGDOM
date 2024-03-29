@@ -40,18 +40,18 @@
             "show_quantity_selector": true
           }
         },
-        "pickup_avaiability": {
-          "type": "pickup_avaiability",
-          "settings": {
-          }
-        },
-        "d917a283-18e0-4e5e-98d4-cb05d6ab8575": {
+        "size_guide_popup_Nz7kjh": {
           "type": "size_guide_popup",
           "settings": {
             "label": "Size guide",
             "has_icon": true,
             "page": "size-guide",
             "open_mode": "popup"
+          }
+        },
+        "pickup_avaiability": {
+          "type": "pickup_avaiability",
+          "settings": {
           }
         },
         "cf4eb7b7-5f2b-43ad-a7de-bdfccb838206": {
@@ -69,8 +69,8 @@
         "variant_picker",
         "1401f5ae-2598-48a0-947d-fdbbfe7c11c4",
         "buy_buttons",
+        "size_guide_popup_Nz7kjh",
         "pickup_avaiability",
-        "d917a283-18e0-4e5e-98d4-cb05d6ab8575",
         "cf4eb7b7-5f2b-43ad-a7de-bdfccb838206"
       ],
       "settings": {

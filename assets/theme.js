@@ -112,6 +112,7 @@ if (!window.addDatePicker) {
     "30/03/2024",
     "31/03/2024",
     "01/04/2024",
+    "25/04/2024",
   ];
 
   const endDate = new Date(

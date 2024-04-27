@@ -108,6 +108,7 @@ if (!window.addDatePicker) {
   const datesDisabledPickUp = [...datesDisabledBoth, "14/02/2024"];
   const datesDisabledDelivery = [
     ...datesDisabledBoth,
+    "28/04/2024",
     "05/05/2024",
     "19/05/2024",
     "26/05/2024",

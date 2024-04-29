@@ -182,8 +182,23 @@
             "image": "shopify:\/\/shop_images\/f62274a35f121c56ffdbf6b9ac38ad5c.jpg"
           }
         },
+        "collection_NtJ6DA": {
+          "type": "collection",
+          "settings": {
+            "collection": "for-graduation",
+            "image": "shopify:\/\/shop_images\/IMG_1014.jpg"
+          }
+        },
+        "collection_C8689T": {
+          "type": "collection",
+          "settings": {
+            "collection": "mothers-day",
+            "image": "shopify:\/\/shop_images\/857DF340-698A-494C-9738-E6CA33F6E3E5.jpg"
+          }
+        },
         "336c8af9-b9ad-4c69-9979-a9195e474120": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "designers-choice",
             "image": "shopify:\/\/shop_images\/6.jpg"
@@ -199,6 +214,7 @@
         },
         "323e00c8-3abb-4534-8604-dc2d1509745d": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "gift-shop"
           }
@@ -213,12 +229,13 @@
       },
       "block_order": [
         "162878204691e40114-0",
+        "collection_NtJ6DA",
+        "collection_C8689T",
         "336c8af9-b9ad-4c69-9979-a9195e474120",
         "162878204691e40114-1",
         "323e00c8-3abb-4534-8604-dc2d1509745d",
         "01558215-ae35-4291-8a17-0b762cf0f3ff"
       ],
-      "disabled": true,
       "settings": {
         "layout": "layout-halves",
         "alignment": "horizontal-left vertical-bottom",
@@ -265,61 +282,6 @@
         "color_bg": "rgba(0,0,0,0)"
       }
     },
-    "featured_product_MdmUfh": {
-      "type": "featured-product",
-      "blocks": {
-        "text_GEdijG": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Best sellers<\/p>",
-            "text_style": "subtitle"
-          }
-        },
-        "title_CKr8KT": {
-          "type": "title",
-          "settings": {
-            "seo_h_tag": "h3"
-          }
-        },
-        "price_HKMgqL": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "variant_picker_hwKzkb": {
-          "type": "variant_picker",
-          "settings": {
-            "show_variant_labels": true,
-            "show_quantities": "no"
-          }
-        },
-        "buy_buttons_yUF33J": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_quantity_selector": true
-          }
-        },
-        "product_link_tTppNV": {
-          "type": "product_link",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "text_GEdijG",
-        "title_CKr8KT",
-        "price_HKMgqL",
-        "variant_picker_hwKzkb",
-        "buy_buttons_yUF33J",
-        "product_link_tTppNV"
-      ],
-      "settings": {
-        "product": "blossom-bear-box",
-        "enable_zoom": true,
-        "enable_video_looping": false
-      }
-    },
     "1628782217b36bf2bd": {
       "type": "video-background",
       "settings": {
@@ -341,7 +303,6 @@
     "16287820898598ef0b",
     "162878204691e40114",
     "bc4e434b-e8ec-463c-8c40-ca856ea043b7",
-    "featured_product_MdmUfh",
     "1628782217b36bf2bd"
   ]
 }

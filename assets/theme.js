@@ -104,25 +104,9 @@ if (!window.addDatePicker) {
   const todayString = new Date().toLocaleDateString("en-GB");
 
   //add black out date here, format:
-  const datesDisabledBoth = ["26/01/2024"];
-  const datesDisabledPickUp = [...datesDisabledBoth, "14/02/2024"];
-  const datesDisabledDelivery = [
-    ...datesDisabledBoth,
-    "28/04/2024",
-    "05/05/2024",
-    "19/05/2024",
-    "26/05/2024",
-    "02/06/2024",
-    "09/06/2024",
-    "16/06/2024",
-    "23/06/2024",
-    "30/06/2024",
-    "07/07/2024",
-    "14/07/2024",
-    "21/07/2024",
-    "28/07/2024",
-    "12/05/2024",
-  ];
+  const datesDisabledBoth = ["10/06/2024", "07/10/2024"];
+  const datesDisabledPickUp = [...datesDisabledBoth];
+  const datesDisabledDelivery = [...datesDisabledBoth];
 
   const endDate = new Date(
     new Date().setDate(new Date().getDate() + 60)

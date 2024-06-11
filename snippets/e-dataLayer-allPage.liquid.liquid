@@ -1,0 +1,70 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('form[action*="/cart/add"]').forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        var formData = new FormData(form);
+        var productId = formData.get('id');
+        var productQuantity = formData.get('quantity') || 1;
+        var productElement = document.querySelector('[data-product-id="' + productId + '"]');
+        var productName = productElement.getAttribute('data-product-name');
+        var productPrice = productElement.getAttribute('data-product-price');
+
+        var product = {
+          'id': productId,
+          'item_id': productId,
+          'item_name': productName,
+          'price': parseFloat(productPrice),
+          'quantity': parseInt(productQuantity)
+        };
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'add_to_cart',
+          'ecommerce': {
+            'items': [product]
+          }
+        });
+      });
+    });
+  });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var checkoutButtons = document.querySelectorAll('a[href*="/checkout"], button[name="checkout"]');
+
+  checkoutButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      fetch('/cart.js')
+        .then(response => response.json())
+        .then(cart => {
+          // 创建items数组
+          var items = cart.items.map(function(item) {
+            return {
+              'item_name': item.title,
+              'item_id': item.variant_id,
+              'price': item.price / 100,
+              'quantity': item.quantity
+            };
+          });
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'begin_checkout',
+            'value': cart.total_price / 100, 
+            'currency': cart.currency,
+            'items': items
+          });
+          // 确保结账按钮的默认行为仍然执行
+          setTimeout(function() {
+            if (button.tagName === 'A') {
+              window.location.href = button.href;
+            } else {
+              button.form.submit();
+            }
+          }, 500); // 延迟以确保数据层事件有时间发送
+        })
+        .catch(error => console.error('Error fetching cart data:', error));
+      event.preventDefault();
+    });
+  });
+});
+
+</script>

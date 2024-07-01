@@ -439,6 +439,10 @@
     "checkout": {
       "contact": {
         "phone_label": "Recipient's phone number"
+      },
+      "shipping": {
+        "shipping_line_phone_label": "Senders phone ",
+        "shipping_line_phone": "Senders phone "
       }
     }
   }

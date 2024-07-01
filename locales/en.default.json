@@ -438,7 +438,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "phone_label": "Recipient's phone number"
+        "phone_label": "Recipient's phone number",
+        "optional_phone_label": "Sender's phone number"
       }
     }
   }

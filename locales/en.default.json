@@ -438,7 +438,7 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "phone_label": "Test"
+        "phone_label": "Phone"
       }
     }
   }

@@ -441,7 +441,8 @@
         "phone_label": "Recipient's phone number"
       },
       "shipping": {
-        "shipping_line_phone_label": "Sender's Mobile phone number"
+        "shipping_line_phone_label": "Sender's Mobile phone number",
+        "shipping_line_delivery_phone_label": "Sender's Mobile phone number"
       }
     }
   }

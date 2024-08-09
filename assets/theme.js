@@ -104,7 +104,7 @@ if (!window.addDatePicker) {
   const todayString = new Date().toLocaleDateString("en-GB");
 
   //add black out date here, format:
-  const datesDisabledBoth = ["10/06/2024", "07/10/2024"];
+  const datesDisabledBoth = ["18/08/2024"];
   const datesDisabledPickUp = [...datesDisabledBoth];
   const datesDisabledDelivery = [...datesDisabledBoth];
 

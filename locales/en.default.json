@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "general": {
     "404": {
@@ -425,5 +434,16 @@
     "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}<\/strong>",
     "invalid_location_address": "Contact store to confirm address",
     "refresh": "Refresh"
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "phone_label": "Recipient's phone number"
+      },
+      "shipping": {
+        "shipping_line_phone_label": "Sender's Mobile phone number",
+        "shipping_line_delivery_phone_label": "Sender's Mobile phone number"
+      }
+    }
   }
 }

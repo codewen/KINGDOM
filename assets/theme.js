@@ -104,9 +104,9 @@ if (!window.addDatePicker) {
   const todayString = new Date().toLocaleDateString("en-GB");
 
   //add black out date here, format:
-  const datesDisabledBoth = ["18/08/2024"];
+  const datesDisabledBoth = ["18/08/2024", "01/09/2024"];
   const datesDisabledPickUp = [...datesDisabledBoth];
-  const datesDisabledDelivery = [...datesDisabledBoth];
+  const datesDisabledDelivery = [...datesDisabledBoth, "07/10/2024"];
 
   const endDate = new Date(
     new Date().setDate(new Date().getDate() + 60)
@@ -229,18 +229,21 @@ if (!window.addDatePicker) {
           return true;
         }
       };
-      setInterval(() => {
-        $("#dynamic-checkout-cart").unbind("click", handler);
-        $("#dynamic-checkout-cart").bind("click", handler);
-      }, 500);
-      $("[name='checkout']").click(function () {
+      const normalCheckoutHandler = () => {
         if ($("#date").val() == "" || $("#date").val() === undefined) {
           alert("You must pick a delivery date");
           return false;
         } else {
           return true;
         }
-      });
+      };
+      setInterval(() => {
+        $("#dynamic-checkout-cart").unbind("click", handler);
+        $("#dynamic-checkout-cart").bind("click", handler);
+
+        $("[name='checkout']").unbind("click", normalCheckoutHandler);
+        $("[name='checkout']").bind("click", normalCheckoutHandler);
+      }, 500);
 
       //init delivery toggle
       $(".cart__form .tabs .tab").unbind("click");

@@ -216,12 +216,28 @@ if (!window.addDatePicker) {
   window.addDatePicker = () => {
     $(document).ready(function () {
       //add date check on submit
+      const handler = function (e) {
+        e.preventDefault();
+        if ($("#date").val() == "" || $("#date").val() === undefined) {
+          alert("You must pick a delivery date");
+          console.log(window.location.pathname);
+          setTimeout(() => {
+            window.location.pathname = "/cart";
+          }, 1000);
+          return false;
+        } else {
+          return true;
+        }
+      };
+      setInterval(() => {
+        $("#dynamic-checkout-cart").unbind("click", handler);
+        $("#dynamic-checkout-cart").bind("click", handler);
+      }, 500);
       $("[name='checkout']").click(function () {
         if ($("#date").val() == "" || $("#date").val() === undefined) {
           alert("You must pick a delivery date");
           return false;
         } else {
-          //$(this).submit();
           return true;
         }
       });

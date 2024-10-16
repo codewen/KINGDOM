@@ -216,6 +216,7 @@ if (!window.addDatePicker) {
   window.addDatePicker = () => {
     $(document).ready(function () {
       //add date check on submit
+      $("#date").val("");
       const handler = function (e) {
         e.preventDefault();
         if ($("#date").val() == "" || $("#date").val() === undefined) {
@@ -237,13 +238,11 @@ if (!window.addDatePicker) {
           return true;
         }
       };
-      setInterval(() => {
-        $("#dynamic-checkout-cart").unbind("click", handler);
-        $("#dynamic-checkout-cart").bind("click", handler);
+      // setTimeout(() => {
+      $("#dynamic-checkout-cart").bind("click", handler);
 
-        $("[name='checkout']").unbind("click", normalCheckoutHandler);
-        $("[name='checkout']").bind("click", normalCheckoutHandler);
-      }, 500);
+      $("[name='checkout']").bind("click", normalCheckoutHandler);
+      // }, 1000);
 
       //init delivery toggle
       $(".cart__form .tabs .tab").unbind("click");

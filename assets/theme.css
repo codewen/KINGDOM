@@ -2398,3 +2398,8 @@ html[dir=rtl] .shopify-policy__title {
 html[dir=ltr] .shopify-policy__title {
   text-align: left;
 }
+
+.shopify-payment-button__button{
+  display:none;
+}
+}
